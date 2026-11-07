@@ -61,6 +61,9 @@
     ./gaming/obs
     ./gaming/qbittorrent
 
+    # Guitar
+    ./guitar/reaper
+
     # Media
     ./media/coppwr
     ./media/foliate
