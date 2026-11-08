@@ -60,6 +60,7 @@
     ./gaming/mesa
     ./gaming/obs
     ./gaming/qbittorrent
+    ./gaming/ryubing
 
     # Guitar
     ./guitar/reaper
