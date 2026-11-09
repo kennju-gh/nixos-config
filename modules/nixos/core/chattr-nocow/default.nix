@@ -13,7 +13,7 @@
     };
     path = [ pkgs.e2fsprogs ];
     script = ''
-      for dir in /.steam /.wine /.vm /.podman /var/lib/docker /var/lib/containers/storage /home/${username}/.local/share/Steam /home/${username}/.local/share/containers/storage; do
+      for dir in /.steam /.wine /.vm /.podman /var/lib/docker /var/lib/containers/storage /home/${username}/.config/Ryujinx /home/${username}/.local/share/Steam /home/${username}/.local/share/containers/storage; do
         if [ -d "$dir" ] && [ -z "$(ls -A "$dir" 2>/dev/null)" ]; then
           chattr +C "$dir"
         fi
