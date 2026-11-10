@@ -5,7 +5,10 @@
     enableZshIntegration = true;
 
     defaultCommand = "fd --type f --hidden --exclude .git";
-    fileWidget.Command = "fd --type f --hidden --exclude .git";
+
+    fileWidget = {
+      command = "fd --type f --hidden --exclude .git";
+    };
 
     defaultOptions = [
       "--height=60%"
