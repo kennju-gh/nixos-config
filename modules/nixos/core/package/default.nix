@@ -33,6 +33,7 @@
     # Audio & Media managment
     playerctl
     wiremix
+    pipewire.jack
 
     # Hadrware, Diagnostics & Monitoring
     smartmontools
