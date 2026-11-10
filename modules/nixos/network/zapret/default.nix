@@ -38,7 +38,7 @@
       "--ip-id=zero"
       "--dpi-desync=fake,multisplit"
       "--dpi-desync-split-pos=1"
-      "--dpi-desync-fooling=md5sig"
+      "--dpi-desync-fooling=ts"
       "--dpi-desync-repeats=8"
       "--new"
     ];
