@@ -37,6 +37,7 @@
         ServerAliveCountMax 3
         TCPKeepAlive yes
         ConnectTimeout 30
+        AddKeysToAgent yes
     '';
   };
 
