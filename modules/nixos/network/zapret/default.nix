@@ -14,15 +14,15 @@
       "--filter-udp=443"
       "--dpi-desync=fake"
       "--dpi-desync-repeats=6"
-      "--dpi-desync-fake-quic=${pkgs.zapret}/usr/share/zapret/files/fake/quic_initial_www_google_com.bin"
+      "--dpi-desync-fake-quic=${pkgs.zapret}/share/zapret/files/fake/quic_initial_www_google_com.bin"
       "--new"
 
       # Discord UDP
       "--filter-udp=19294-19344,50000-50100"
       "--filter-l7=discord,stun"
       "--dpi-desync=fake"
-      "--dpi-desync-fake-discord=${pkgs.zapret}/usr/share/zapret/files/fake/ACTIVE_DISCORD_UDP.bin"
-      "--dpi-desync-fake-stun=${pkgs.zapret}/usr/share/zapret/files/fake/ACTIVE_DISCORD_UDP.bin"
+      "--dpi-desync-fake-discord=${pkgs.zapret}/share/zapret/files/fake/discord-ip-discovery-with-port.bin"
+      "--dpi-desync-fake-stun=${pkgs.zapret}/share/zapret/files/fake/stun.bin"
       "--dpi-desync-repeats=6"
       "--new"
 
@@ -42,7 +42,7 @@
       "--dpi-desync-split-pos=1"
       "--dpi-desync-fooling=ts"
       "--dpi-desync-repeats=6"
-      "--dpi-desync-split-seqovl-pattern=${pkgs.zapret}/usr/share/zapret/files/fake/tls_clienthello_www_google_com.bin"
+      "--dpi-desync-split-seqovl-pattern=${pkgs.zapret}/share/zapret/files/fake/tls_clienthello_www_google_com.bin"
       "--new"
 
       # Any TCP 80/443
@@ -52,7 +52,7 @@
       "--dpi-desync-split-pos=1"
       "--dpi-desync-fooling=ts"
       "--dpi-desync-repeats=3"
-      "--dpi-desync-split-seqovl-pattern=${pkgs.zapret}/usr/share/zapret/files/fake/tls_clienthello_www_google_com.bin"
+      "--dpi-desync-split-seqovl-pattern=${pkgs.zapret}/share/zapret/files/fake/tls_clienthello_www_google_com.bin"
       "--new"
     ];
   };
