@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.zapret2 = {
-    enable = true;
+    enable = false;
     package = pkgs.zapret2;
     firewall.interfaces = [ "enp6s0" ];
     firewall.tcpPorts = [ 443 ];
