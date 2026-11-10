@@ -59,6 +59,8 @@ in
       }
     ];
 
+    environment.variables.LD_LIBRARY_PATH = "${pkgs.pipewire.jack}/lib";
+
     security.rtkit.enable = true;
   };
 }
