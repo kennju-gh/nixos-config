@@ -35,10 +35,10 @@
   };
 
   # Journal
-  services.journald.extraConfig = ''
-    SystemMaxUse=1G
-    MaxRetentionSec=14day
-  '';
+  services.journald.settings.Journal = {
+    SystemMaxUse = "1G";
+    MaxRetentionSec = "14day";
+  };
 
   # Variables
   environment.sessionVariables = {
