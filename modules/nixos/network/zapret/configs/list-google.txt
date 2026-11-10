@@ -1,6 +1,0 @@
-    google.com
-    www.google.com
-    googlevideo.com
-    youtube.com
-    youtu.be
-    ytimg.com
