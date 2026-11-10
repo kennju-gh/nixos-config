@@ -33,11 +33,12 @@
       "--dpi-desync-repeats=8"
       "--new"
 
-      # Google TCP 443 - split2
+      # Google TCP 443
       "--filter-tcp=443"
       "--ip-id=zero"
-      "--dpi-desync=split2"
+      "--dpi-desync=fake,multisplit"
       "--dpi-desync-split-pos=1"
+      "--dpi-desync-fooling=md5sig"
       "--dpi-desync-repeats=8"
       "--new"
     ];
