@@ -10,10 +10,6 @@ in
     devices = mkOption {
       type = types.listOf types.str;
       default = [ "alsa_card.pci-0000_03_00.1" ];
-      description = ''
-        List of ALSA card names to disable.
-        Use `wpctl status` to find the exact device.name values.
-      '';
     };
   };
 

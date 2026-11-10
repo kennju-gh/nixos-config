@@ -26,7 +26,6 @@
       };
     };
 
-    # Templates
     templates."tg-ws-proxy.env".content = ''
       TG_WS_PROXY_SECRET=${config.sops.placeholder."tg_ws_proxy_secret"}
     '';

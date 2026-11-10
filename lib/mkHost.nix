@@ -16,7 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [
-        (import ../overlays/unstable.nix { inherit inputs; })
+        (import ../overlays/stable.nix { inherit inputs; })
       ];
     }
     inputs.disko.nixosModules.disko

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.unstable.diskwatch
+  home.packages = with pkgs; [
+    diskwatch
   ];
 }
