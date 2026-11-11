@@ -10,7 +10,7 @@
     package = pkgs.zapret;
 
     params = [
-      # YouTube QUIC (UDP 443)
+      # YouTube (QUIC / UDP 443)
       "--filter-udp=443"
       "--hostlist=/etc/zapret/lists/list-general.txt"
       "--dpi-desync=fake"
@@ -18,16 +18,7 @@
       "--dpi-desync-fake-quic=/etc/zapret/bin/quic_initial_www_google_com.bin"
       "--new"
 
-      # Discord UDP
-      "--filter-udp=19294-19344,50000-50100"
-      "--filter-l7=discord,stun"
-      "--dpi-desync=fake"
-      "--dpi-desync-fake-discord=/etc/zapret/bin/ACTIVE_DISCORD_UDP.bin"
-      "--dpi-desync-fake-stun=/etc/zapret/bin/ACTIVE_DISCORD_UDP.bin"
-      "--dpi-desync-repeats=6"
-      "--new"
-
-      # Google TCP 443 (hostfakesplit)
+      # Google (TCP 443 - hostfakesplit)
       "--filter-tcp=443"
       "--hostlist=/etc/zapret/lists/list-google.txt"
       "--ip-id=zero"
@@ -35,6 +26,15 @@
       "--dpi-desync-repeats=4"
       "--dpi-desync-fooling=ts"
       "--dpi-desync-hostfakesplit-mod=host=www.google.com"
+      "--new"
+
+      # Discord (UDP)
+      "--filter-udp=19294-19344,50000-50100"
+      "--filter-l7=discord,stun"
+      "--dpi-desync=fake"
+      "--dpi-desync-fake-discord=/etc/zapret/bin/ACTIVE_DISCORD_UDP.bin"
+      "--dpi-desync-fake-stun=/etc/zapret/bin/ACTIVE_DISCORD_UDP.bin"
+      "--dpi-desync-repeats=6"
       "--new"
 
       # Discord Media (TCP)
@@ -46,7 +46,7 @@
       "--dpi-desync-hostfakesplit-mod=host=www.google.com"
       "--new"
 
-      # Other TCP
+      # Other (TCP)
       "--filter-tcp=80,443"
       "--hostlist=/etc/zapret/lists/list-general.txt"
       "--dpi-desync=hostfakesplit"
