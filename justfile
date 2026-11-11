@@ -19,6 +19,7 @@ update host=host_detected:
     git add flake.lock
     git commit -m "chore: flake update $(date +%Y-%m-%d)"
     just boot {{host}}
+    git push
 
 # Run garbage collection manually
 gc:
