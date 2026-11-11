@@ -36,8 +36,8 @@
       # Google TCP 443
       "--filter-tcp=443"
       "--ip-id=zero"
-      "--dpi-desync=fake,multisplit"
-      "--dpi-desync-split-pos=1"
+      "--dpi-desync=fake,multidisorder"
+      "--dpi-desync-split-pos=1,midsld"
       "--dpi-desync-fooling=ts"
       "--dpi-desync-repeats=8"
       "--new"
