@@ -45,6 +45,7 @@
     ./network/ssh
     ./network/tailscale
     ./network/zapret
+    ./network/zapret-rust
     ./network/zapret2
 
     # Security
