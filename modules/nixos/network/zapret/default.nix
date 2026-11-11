@@ -6,6 +6,7 @@
 
     whitelist = [
       "youtube.com"
+      "googlevideo.com"
       "ytimg.com"
       "youtu.be"
       "twitch.tv"
@@ -32,16 +33,9 @@
       "--dpi-desync-repeats=8"
       "--new"
 
-      # googlevideo
-      "--filter-tcp=443"
-      "--hostlist-domains=googlevideo.com"
-      "--dpi-desync=hostfakesplit"
-      "--dpi-desync-repeats=4"
-      "--dpi-desync-fooling=ts"
-      "--new"
-
       # Google TCP 443
       "--filter-tcp=443"
+      "--ip-id=zero"
       "--dpi-desync=fake,multisplit"
       "--dpi-desync-split-pos=1"
       "--dpi-desync-fooling=ts"
