@@ -29,11 +29,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    zapret-rust = {
-      url = "github:Sergeydigl3/zapret-discord-youtube-rust";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
