@@ -1,12 +1,5 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  inputs,
-  config,
-  ...
-}:
-{
-  imports = [ inputs.sops-nix.nixosModules.sops ];
-
   sops = {
     age = {
       keyFile = "/var/lib/sops-nix/key.txt";

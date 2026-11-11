@@ -21,6 +21,8 @@ inputs.nixpkgs.lib.nixosSystem {
     }
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
+    inputs.stylix.nixosModules.stylix
+    inputs.sops-nix.nixosModules.sops
     inputs.zapret-rust.nixosModules.zapret-rust
     ../modules/nixos
     ../hosts/${hostName}/default.nix
