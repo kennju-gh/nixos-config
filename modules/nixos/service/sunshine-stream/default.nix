@@ -34,19 +34,24 @@ in
 
         wait $SUNSHINE_PID
       '')
-    ];
 
-    environment.etc."xdg/applications/dev.lizardbyte.app.Sunshine.desktop".text = ''
-      [Desktop Entry]
-      Name=Sunshine
-      Comment=Start Sunshine and create Game_Audio sink
-      Exec=${pkgs.writeShellScriptBin "sunshine-stream-launch" ''
-        sunshine-stream > /dev/null 2>&1 &
-      ''}/bin/sunshine-stream-launch
-      Icon=dev.lizardbyte.app.Sunshine
-      Terminal=false
-      Type=Application
-      Categories=Network;AudioVideo;
-    '';
+      (pkgs.symlinkJoin {
+        name = "sunshine-stream-desktop";
+        paths = [
+          (pkgs.writeTextDir "share/applications/sunshine-stream.desktop" ''
+            [Desktop Entry]
+            Name=Sunshine Stream
+            Comment=Start Sunshine and create Game_Audio sink
+            Exec=${pkgs.writeShellScriptBin "sunshine-stream-launch" ''
+              sunshine-stream > /dev/null 2>&1 &
+            ''}/bin/sunshine-stream-launch
+            Icon=dev.lizardbyte.app.Sunshine
+            Terminal=false
+            Type=Application
+            Categories=AudioVideo;Network;
+          '')
+        ];
+      })
+    ];
   };
 }
