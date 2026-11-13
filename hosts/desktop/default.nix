@@ -62,6 +62,10 @@
   # == User modules (Home Manager)
   # -- Enable user-level features here:
 
+  my.home.reaper = {
+    enable = true;
+  };
+
   my.home.obs = {
     enable = true;
   };
