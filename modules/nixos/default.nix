@@ -57,8 +57,7 @@
     ./service/sunshine
     ./service/sunshine-stream
     ./service/tg-ws-proxy
-    ./service/wireplumber/wireplumber-disable-hdmi-dp
-    ./service/wireplumber/wireplumber-game-audio
+    ./service/wireplumber-disable-hdmi-dp
 
     # User
     ./user

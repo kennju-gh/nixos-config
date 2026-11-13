@@ -52,10 +52,6 @@
       devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
     };
 
-    my.system.wireplumber.gameAudio = {
-      enable = true;
-    };
-
     my.system.sunshineStream = {
       enable = true;
     };

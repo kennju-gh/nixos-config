@@ -35,5 +35,18 @@ in
         wait $SUNSHINE_PID
       '')
     ];
+
+    environment.etc."xdg/applications/dev.lizardbyte.app.Sunshine.desktop".text = ''
+      [Desktop Entry]
+      Name=Sunshine
+      Comment=Start Sunshine and create Game_Audio sink
+      Exec=${pkgs.writeShellScriptBin "sunshine-stream-launch" ''
+        sunshine-stream > /dev/null 2>&1 &
+      ''}/bin/sunshine-stream-launch
+      Icon=dev.lizardbyte.app.Sunshine
+      Terminal=false
+      Type=Application
+      Categories=Network;AudioVideo;
+    '';
   };
 }
