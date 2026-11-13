@@ -1,9 +1,19 @@
-{ lib, ... }:
+{ config, lib, ... }:
+with lib;
+let
+  cfg = config.my.system.tailscale;
+in
 {
-  services.tailscale = {
-    enable = true;
-    openFirewall = true;
+  options.my.system.tailscale = {
+    enable = mkEnableOption "Tailscale VPN";
   };
 
-  systemd.services.tailscaled.wantedBy = lib.mkForce [ ];
+  config = mkIf cfg.enable {
+    services.tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    systemd.services.tailscaled.wantedBy = mkForce [ ];
+  };
 }
