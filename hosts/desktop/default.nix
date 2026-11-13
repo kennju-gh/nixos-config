@@ -23,6 +23,22 @@
 
   boot.kernelModules = [ "coretemp" ];
 
+  my.system.wine = {
+    enable = true;
+  };
+
+  my.system.carla-yabridge = {
+    enable = true;
+  };
+
+  my.system.tailscale = {
+    enable = true;
+  };
+
+  my.system.sunshine = {
+    enable = true;
+  };
+
   my.system.audio = {
     enable = true;
     quantum = 256;
@@ -30,17 +46,17 @@
     maxQuantum = 1024;
   };
 
-  my.system.carla-yabridge = {
-    enable = true;
-  };
-
-  my.system.wine = {
-    enable = true;
-  };
-
   my.system.wireplumber.disableHdmiDp = {
     enable = true;
     devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
+  };
+
+  my.system.wireplumber.gameAudio = {
+    enable = true;
+  };
+
+  my.system.sunshineStream = {
+    enable = true;
   };
 
   # == User modules (Home Manager)
