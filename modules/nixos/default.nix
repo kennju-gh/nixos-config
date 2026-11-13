@@ -55,8 +55,10 @@
     ./service/restic
     ./service/restic-dir
     ./service/sunshine
+    ./service/sunshine-stream
     ./service/tg-ws-proxy
-    ./service/wireplumber-disable-hdmi-dp
+    ./service/wireplumber/wireplumber-disable-hdmi-dp
+    ./service/wireplumber/wireplumber-game-audio
 
     # User
     ./user
