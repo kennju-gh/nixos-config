@@ -9,21 +9,19 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.etc."wireplumber/wireplumber.conf.d/51-game-audio.conf".text = ''
-      wireplumber.settings = {
-        node.rules = [
-          {
-            matches = [
-              { application.process.binary = "wine64-preloader"; }
-            ];
-            actions = {
-              update-props = {
-                target.object = "game_audio";
-              };
+    services.pipewire.wireplumber.extraConfig."51-game-audio" = {
+      "node.rules" = [
+        {
+          matches = [
+            { "application.process.binary" = "wine64-preloader"; }
+          ];
+          actions = {
+            "update-props" = {
+              "target.object" = "game_audio";
             };
-          }
-        ];
-      }
-    '';
+          };
+        }
+      ];
+    };
   };
 }
