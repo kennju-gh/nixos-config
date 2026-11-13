@@ -1,0 +1,39 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib;
+let
+  cfg = config.my.system.sunshineStream;
+in
+{
+  options.my.system.sunshineStream = {
+    enable = mkEnableOption "Sunshine streaming script with audio routing";
+  };
+
+  config = mkIf cfg.enable {
+    environment.systemPackages = [
+      (pkgs.writeShellScriptBin "sunshine-stream" ''
+        #!/usr/bin/env bash
+        set -euo pipefail
+
+        SINK_NAME="game_audio"
+        SINK_DESC="Game_Audio"
+
+        MODULE_ID=$(${pkgs.pulseaudio}/bin/pactl load-module module-null-sink sink_name="$SINK_NAME" sink_properties=device.description="$SINK_DESC")
+
+        sunshine > /dev/null 2>&1 &
+        SUNSHINE_PID=$!
+
+        cleanup() {
+            ${pkgs.pulseaudio}/bin/pactl unload-module "$MODULE_ID"
+        }
+        trap cleanup EXIT
+
+        wait $SUNSHINE_PID
+      '')
+    ];
+  };
+}
