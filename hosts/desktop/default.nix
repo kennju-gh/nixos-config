@@ -6,7 +6,7 @@
     ../../modules/disko/btrfs-layout.nix
   ];
 
-  # == System modules
+  # == System modules (NixOS)
   # -- Enable system-level features here:
 
   boot.kernelParams = [
@@ -61,4 +61,8 @@
 
   # == User modules (Home Manager)
   # -- Enable user-level features here:
+
+  my.home.obs = {
+    enable = true;
+  };
 }
