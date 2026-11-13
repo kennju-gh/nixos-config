@@ -25,12 +25,15 @@
     # -- Enable user-level features here:
 
     # home-manager.users.${username} = {
+
     #   my.home.reaper = {
     #     enable = true;
     #   };
+
     #   my.home.obs = {
     #     enable = true;
     #   };
+
     # };
   };
 }
