@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 {
   imports = [
     ./hardware.nix
@@ -62,11 +62,11 @@
   # == User modules (Home Manager)
   # -- Enable user-level features here:
 
-  my.home.reaper = {
+  config.home-manager.users.${username}.my.home.reaper = {
     enable = true;
   };
 
-  my.home.obs = {
+  config.home-manager.users.${username}.my.home.obs = {
     enable = true;
   };
 }
