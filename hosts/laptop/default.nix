@@ -6,7 +6,7 @@
     ../../modules/disko/btrfs-layout.nix
   ];
 
-  # == System modules
+  # == System modules (NixOS)
   # -- Enable system-level features here:
 
   my.system.audio = {
@@ -16,7 +16,9 @@
     maxQuantum = 2048;
   };
 
-  my.system.logind.enable = true;
+  my.system.logind.enable = {
+    enable = true;
+  };
 
   # == User modules (Home Manager)
   # -- Enable user-level features here:
