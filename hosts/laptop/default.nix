@@ -16,7 +16,7 @@
     maxQuantum = 2048;
   };
 
-  my.system.logind.enable = {
+  my.system.logind = {
     enable = true;
   };
 
