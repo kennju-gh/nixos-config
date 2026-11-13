@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  username,
+  ...
+}:
 with lib;
 let
   cfg = config.my.system.tailscale;
@@ -15,5 +20,21 @@ in
     };
 
     systemd.services.tailscaled.wantedBy = mkForce [ ];
+
+    security.sudo.extraRules = [
+      {
+        users = [ username ];
+        commands = [
+          {
+            command = "/run/current-system/sw/bin/systemctl start tailscaled";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/systemctl stop tailscaled";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
   };
 }

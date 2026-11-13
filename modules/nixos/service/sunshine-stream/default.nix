@@ -22,13 +22,16 @@ in
         SINK_NAME="game_audio"
         SINK_DESC="Game_Audio"
 
+        sudo systemctl start tailscaled || true
+
         MODULE_ID=$(${pkgs.pulseaudio}/bin/pactl load-module module-null-sink sink_name="$SINK_NAME" sink_properties=device.description="$SINK_DESC")
 
         sunshine > /dev/null 2>&1 &
         SUNSHINE_PID=$!
 
         cleanup() {
-            ${pkgs.pulseaudio}/bin/pactl unload-module "$MODULE_ID"
+            sudo systemctl stop tailscaled || true
+            ${pkgs.pulseaudio}/bin/pactl unload-module "$MODULE_ID" || true
         }
         trap cleanup EXIT
 
