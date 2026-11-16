@@ -20,6 +20,7 @@
     ./desktop/hypridle
     ./desktop/hyprlock
     ./desktop/mako
+    ./desktop/nautilus
     ./desktop/niri
     ./desktop/qt
     ./desktop/swaybg
