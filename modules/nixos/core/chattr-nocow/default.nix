@@ -15,7 +15,9 @@
     script = ''
       for dir in /.steam /.wine /.vm /.podman /var/lib/docker /var/lib/containers/storage /home/${username}/.config/Ryujinx /home/${username}/.local/share/Steam /home/${username}/.local/share/containers/storage; do
         if [ -d "$dir" ] && [ -z "$(ls -A "$dir" 2>/dev/null)" ]; then
-          chattr +C "$dir"
+          if ! lsattr -d "$dir" 2>/dev/null | awk '{print $1}' | grep -q 'C'; then
+            chattr +C "$dir"
+          fi
         fi
       done
     '';
