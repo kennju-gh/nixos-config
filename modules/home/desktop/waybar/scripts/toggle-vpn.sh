@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VPNS=("AM01")
+VPNS=("TR1")
 
 if [ "$1" = "--status" ]; then
     if nmcli -t -f NAME,TYPE connection show --active | grep -q ":wireguard$"; then
