@@ -60,6 +60,7 @@
     ./gaming/mangohud
     ./gaming/mesa
     ./gaming/obs
+    ./gaming/pince
     ./gaming/qbittorrent
     ./gaming/ryubing
 
