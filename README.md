@@ -2,14 +2,27 @@
 
 A personal, highly modular, and declarative NixOS configuration using **Flakes**, **Home Manager**, and **Stylix**. This setup is designed for a seamless desktop experience with a focus on DevOps workflows, gaming, audio production, and game streaming.
 
+## Screenshots
+
+![Desktop](./screenshots/desktop.png)
+*Desktop + Waybar*
+
+![Terminal](./screenshots/terminal.png)
+*Niri + Kitty*
+
+![Wlogout](./screenshots/wlogout.png)
+*Wlogout*
+
 ## Hosts
 
 The configuration currently manages two machines via the `lib/mkHost.nix` factory:
 
-*   **`desktop`**: The primary workstation
-    *   *Features*: Full gaming setup, streaming (Sunshine), audio production (Carla/Reaper), and heavy DevOps tooling.
-*   **`laptop`**: A lighter setup (if applicable).
-    *   *Features*: Core essentials, but excludes heavy desktop-specific modules like OBS, Reaper, and Sunshine.
+*   **`desktop`**: The primary desktop workstation.
+    *   *Features*: Full gaming setup, streaming (OBS, Sunshine), audio production (Carla/Reaper), and heavy DevOps tooling.
+*   **`laptop`**: A lightweight laptop setup.
+    *   *Features*: Core essentials, but excludes heavy desktop-specific modules like OBS, Reaper, Wine, and Sunshine.
+*   **`console`** *(Planned)*: A dedicated living room console build.
+    *   *Features*: Built on **Jovian-NixOS** for a Steam Machine-like experience. Boots directly into Steam Big Picture with Gamescope. Includes Niri as a desktop fallback, plus a minimal set of tools.
 
 ## Repository Structure
 
@@ -19,7 +32,6 @@ The repository follows a strict separation of concerns between system-level (Nix
 *   `flake.nix`: The entry point. Defines inputs (`nixpkgs-unstable`, `nixos-26.05` fallback, `home-manager`, `stylix`, `sops-nix`, `disko`) and outputs.
 *   `lib/mkHost.nix`: A custom function to generate host configurations, passing down `inputs`, `username`, `disks`, and `hostName` via `specialArgs`.
 *   `hosts/`: Host-specific configurations.
-    *   `desktop/default.nix`: Enables all necessary system and user modules for the desktop. Uses `config.home-manager.users.${username}` to toggle Home Manager modules directly from the NixOS config.
 *   `overlays/`: Custom overlays (e.g., `stable.nix` to provide packages from the `nixos-26.05` channel for the unstable system).
 *   `secrets/`: Encrypted secrets (`secrets.yaml`) managed by `sops-nix`.
 
@@ -50,7 +62,7 @@ The repository follows a strict separation of concerns between system-level (Nix
 *   **`system/`**: XDG directories, mime-types, and XWayland.
 *   **`windows/`**: Wine configuration.
 
-## Usage
+## Just
 
 This configuration uses a `justfile` to simplify common tasks.
 
@@ -58,7 +70,7 @@ This configuration uses a `justfile` to simplify common tasks.
 # Update flake inputs, build for next boot, and push to Git
 just update
 
-# Build the configuration for the next boot (safer)
+# Build the configuration for the next boot
 just boot
 
 # Apply the configuration immediately
@@ -66,3 +78,7 @@ just switch
 
 # Run garbage collection (keeps 3 generations)
 just gc
+
+# Check flake eval
+just check
+```
