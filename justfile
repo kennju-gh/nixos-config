@@ -17,7 +17,7 @@ switch host=host_detected:
 update host=host_detected:
     nix flake update
     git add flake.lock
-    git commit -m "chore: flake update $(date +%Y-%m-%d)"
+    git commit -m "chore(flake.lock): flake.lock update $(date +%Y-%m-%d)"
     just boot {{host}}
     git push
 
