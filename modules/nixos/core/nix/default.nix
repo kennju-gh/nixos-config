@@ -78,6 +78,11 @@
 
   programs.nix-ld.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   environment.systemPackages = with pkgs; [
     nix-tree
   ];
