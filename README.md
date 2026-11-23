@@ -33,6 +33,7 @@ The repository follows a strict separation of concerns between system-level (Nix
 *   `lib/mkHost.nix`: A custom function to generate host configurations, passing down `inputs`, `username`, `disks`, and `hostName` via `specialArgs`.
 *   `hosts/`: Host-specific configurations.
 *   `overlays/`: Custom overlays (e.g., `stable.nix` to provide packages from the `nixos-26.05` channel for the unstable system).
+*   `screenshots`: Images used in this README.
 *   `secrets/`: Encrypted secrets (`secrets.yaml`) managed by `sops-nix`.
 
 ### NixOS Modules (`modules/nixos/`)
@@ -53,7 +54,7 @@ The repository follows a strict separation of concerns between system-level (Nix
 *   **`device/`**: Device-specific tools (`ios`).
 *   **`devops/`**: DevOps tooling (`ansible`, `terraform`, `kubernetes`, `docker`, `gh`, `glab`, `git`, `go`, `python`, `vscode`, `lazydocker`, `lazygit`, `mosh`, `trivy`, `json-yaml`, `just`, `lint`).
 *   **`document/`**: Document viewers and editors (`calculator`, `libreoffice`, `obsidian`, `zathura`).
-*   **`gaming/`**: Gaming tools (`mangohud`, `mesa`, `obs`, `qbittorrent`, `ryubing`).
+*   **`gaming/`**: Gaming tools (`mangohud`, `mesa`, `obs`, `pince`, `qbittorrent`).
 *   **`guitar/`**: Audio production (`reaper`).
 *   **`media/`**: Media players and tools (`coppwr`, `foliate`, `imv`, `kid3`, `mpd`, `mpv`, `rmpc`).
 *   **`messenger/`**: Communication apps (`telegram`, `webcord`).
