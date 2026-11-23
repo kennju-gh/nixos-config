@@ -23,9 +23,5 @@
     "d /home/${username}/.local/share/Steam 0770 ${username} users - -"
     "d /home/${username}/.local/share/containers 0700 ${username} users - -"
     "d /home/${username}/.local/share/containers/storage 0700 ${username} users - -"
-
-    # Ryujinx
-    "d /home/${username}/.config 0755 ${username} users - -"
-    "d /home/${username}/.config/Ryujinx 0755 ${username} users - -"
   ];
 }

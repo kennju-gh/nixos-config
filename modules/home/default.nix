@@ -62,7 +62,6 @@
     ./gaming/obs
     ./gaming/pince
     ./gaming/qbittorrent
-    ./gaming/ryubing
 
     # Guitar
     ./guitar/reaper
