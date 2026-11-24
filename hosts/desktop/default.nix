@@ -20,9 +20,13 @@
       "video=DP-2:1920x1080@60"
     ];
 
-    boot.initrd.kernelModules = [ "amdgpu" ];
+    boot.initrd.kernelModules = [
+      "amdgpu"
+    ];
 
-    boot.kernelModules = [ "coretemp" ];
+    boot.kernelModules = [
+      "coretemp"
+    ];
 
     my.system.wine = {
       enable = true;
@@ -61,11 +65,18 @@
 
     home-manager.users.${username} = {
 
+      # Gaming
+      my.home.obs = {
+        enable = true;
+      };
+
+      # Guitar
       my.home.reaper = {
         enable = true;
       };
 
-      my.home.obs = {
+      # Media
+      my.home.foliate = {
         enable = true;
       };
 
