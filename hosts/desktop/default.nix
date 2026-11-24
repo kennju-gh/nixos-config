@@ -65,26 +65,23 @@
 
     home-manager.users.${username} = {
 
+      # Backup
+      my.home.rsync.enable = true;
+
+      # Browser
+      my.home.firefox.enable = true;
+
       # CLI
 
       # Gaming
-      my.home.obs = {
-        enable = true;
-      };
+      my.home.obs.enable = true;
 
       # Guitar
-      my.home.reaper = {
-        enable = true;
-      };
+      my.home.reaper.enable = true;
 
       # Media
-      my.home.coppwr = {
-        enable = true;
-      };
-
-      my.home.foliate = {
-        enable = true;
-      };
+      my.home.coppwr.enable = true;
+      my.home.foliate.enable = true;
 
     };
   };
