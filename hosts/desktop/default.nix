@@ -66,9 +66,6 @@
     home-manager.users.${username} = {
 
       # CLI
-      my.home.gsettings = {
-        enable = true;
-      };
 
       # Gaming
       my.home.obs = {
