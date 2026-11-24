@@ -73,6 +73,9 @@
 
       # CLI
 
+      # DevOps
+      my.home.vscode.enable = true;
+
       # Gaming
       my.home.obs.enable = true;
 
