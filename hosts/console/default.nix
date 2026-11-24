@@ -47,6 +47,10 @@
     home-manager.users.${username} = {
 
       # Media
+      my.home.coppwr = {
+        enable = true;
+      };
+
       my.home.foliate = {
         enable = true;
       };
