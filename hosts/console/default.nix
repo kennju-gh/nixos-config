@@ -51,10 +51,6 @@
         enable = true;
       };
 
-      my.home.foliate = {
-        enable = true;
-      };
-
     };
   };
 }
