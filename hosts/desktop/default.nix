@@ -72,6 +72,11 @@
       my.home.firefox.enable = true;
 
       # CLI
+      my.home.btop.enable = true;
+      my.home.diskwatch.enable = true;
+      my.home.fastfetch.enable = true;
+      my.home.neovim.enable = true;
+      my.home.yazi.enable = true;
 
       # DevOps
       my.home.vscode.enable = true;
