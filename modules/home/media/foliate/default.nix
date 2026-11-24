@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
   cfg = config.my.home.foliate;
+  inherit (lib.gvariant) mkUint32;
 in
 {
   options.my.home.foliate = {
@@ -8,9 +9,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.foliate = {
-      enable = true;
-    };
+    programs.foliate.enable = true;
 
     dconf.settings = {
       "com/github/johnfactotum/Foliate" = {
@@ -18,11 +17,11 @@ in
       };
 
       "com/github/johnfactotum/Foliate/viewer" = {
-        fold-sidebar = false;
+        fold-sidebar = true;
       };
 
       "com/github/johnfactotum/Foliate/viewer/font" = {
-        default-size = 24;
+        default-size = mkUint32 24;
       };
 
       "com/github/johnfactotum/Foliate/viewer/view" = {
@@ -31,8 +30,8 @@ in
         hyphenate = true;
         justify = true;
         line-height = 1.5;
-        max-column-count = 1;
-        max-inline-size = 1000;
+        max-column-count = mkUint32 1;
+        max-inline-size = mkUint32 1000;
         theme = "stylix.json";
       };
 
