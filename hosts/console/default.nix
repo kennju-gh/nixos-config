@@ -46,6 +46,11 @@
 
     home-manager.users.${username} = {
 
+      # CLI
+      my.home.gsettings = {
+        enable = true;
+      };
+
       # Media
       my.home.coppwr = {
         enable = true;

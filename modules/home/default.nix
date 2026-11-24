@@ -11,6 +11,7 @@
     ./cli/btop
     ./cli/diskwatch
     ./cli/fastfetch
+    ./cli/gsettings
     ./cli/neovim
     ./cli/yazi
 
