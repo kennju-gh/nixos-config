@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.my.home.wine;
+  cfg = config.my.home.wine-prefix;
 in
 {
-  options.my.home.wine = {
-    enable = lib.mkEnableOption "wine prefix";
+  options.my.home.wine-prefix = {
+    enable = lib.mkEnableOption "wine-prefix";
   };
 
   config = lib.mkIf cfg.enable {

@@ -98,6 +98,6 @@
     ./system/xwayland-satellite
 
     # Windows
-    ./windows/wine
+    ./windows/wine-prefix
   ];
 }
