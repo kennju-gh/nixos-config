@@ -80,7 +80,7 @@
     ./messenger/webcord
 
     # Security
-    ./security/gnupg
+    ./security/gpg
     ./security/keepassxc
 
     # Shell
