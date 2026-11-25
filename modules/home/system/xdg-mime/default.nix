@@ -8,7 +8,7 @@ let
 in
 {
   options.my.home.xdg-mime = {
-    enable = lib.mkEnableOption "xdg-mime";
+    enable = lib.mkEnableOption "xdg.mimeApps";
 
     book = lib.mkEnableOption "foliate";
     browser = lib.mkEnableOption "firefox-bin";

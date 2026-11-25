@@ -89,6 +89,7 @@
       my.home.foliate.enable = true;
 
       # System
+      my.home.xdg-dir.enable = true;
       my.home.xdg-mime = {
         enable = true;
         book = true;
@@ -96,7 +97,7 @@
         dev = true;
         file-manager = true;
         media = true;
-        office = true;
+        office = false;
         pdf = true;
         wine = true;
       };

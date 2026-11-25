@@ -93,8 +93,8 @@
     ./shell/zsh
 
     # System
-    ./system/xdg-dirs
-    ./system/xdg-mimes
+    ./system/xdg-dir
+    ./system/xdg-mime
     ./system/xwayland
 
     # Windows
