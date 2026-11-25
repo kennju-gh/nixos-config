@@ -8,7 +8,7 @@ let
 in
 {
   options.my.system.pipewire-jack = {
-    enable = lib.mkEnableOption "PipeWire-JACK low-latency configuration";
+    enable = lib.mkEnableOption "PipeWire-JACK configuration";
 
     quantum = lib.mkOption {
       type = lib.types.int;
