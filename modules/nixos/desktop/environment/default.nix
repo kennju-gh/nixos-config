@@ -24,13 +24,11 @@
 
   # Security & Secrets
   security.polkit.enable = true;
-  services.gnome.gnome-keyring.enable = true;
   programs.dconf.enable = true;
   services.dbus = {
     enable = true;
     packages = with pkgs; [
       gcr_4
-      gnome-keyring
     ];
   };
 
@@ -43,7 +41,6 @@
   # Variables
   environment.sessionVariables = {
     # Session variables
-    SSH_AUTH_SOCK = "\${XDG_RUNTIME_DIR}/keyring/ssh";
     GTK_A11Y = "none";
     NO_AT_BRIDGE = "1";
 
