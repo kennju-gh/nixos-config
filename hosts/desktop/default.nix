@@ -101,6 +101,10 @@
         pdf = true;
         wine = true;
       };
+      my.home.xwayland-satellite.enable = true;
+
+      # Windows
+
     };
   };
 }

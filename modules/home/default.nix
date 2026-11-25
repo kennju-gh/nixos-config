@@ -95,7 +95,7 @@
     # System
     ./system/xdg-dir
     ./system/xdg-mime
-    ./system/xwayland
+    ./system/xwayland-satellite
 
     # Windows
     ./windows/wine
