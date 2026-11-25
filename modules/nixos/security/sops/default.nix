@@ -1,4 +1,8 @@
-{ pkgs, config, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   sops = {
     age = {
@@ -24,9 +28,9 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    sops
-    age
-    ssh-to-age
+  environment.systemPackages = [
+    pkgs.sops
+    pkgs.age
+    pkgs.ssh-to-age
   ];
 }

@@ -1,7 +1,10 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    python3
-    uv
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.python3
+    pkgs.uv
   ];
 }

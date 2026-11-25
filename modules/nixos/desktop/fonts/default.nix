@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   fonts = {
-    packages = with pkgs; [
-      nerd-fonts.symbols-only
-      noto-fonts-color-emoji
-      liberation_ttf
-      dejavu_fonts
+    packages = [
+      pkgs.nerd-fonts.symbols-only
+      pkgs.noto-fonts-color-emoji
+      pkgs.liberation_ttf
+      pkgs.dejavu_fonts
     ];
 
     fontconfig.useEmbeddedBitmaps = true;

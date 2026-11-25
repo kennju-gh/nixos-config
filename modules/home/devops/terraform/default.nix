@@ -1,9 +1,12 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    terraform
-    tflint
-    terraform-docs
-    terraform-ls
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.terraform
+    pkgs.tflint
+    pkgs.terraform-docs
+    pkgs.terraform-ls
   ];
 }

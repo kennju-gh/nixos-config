@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    mosh
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.mosh
   ];
 }

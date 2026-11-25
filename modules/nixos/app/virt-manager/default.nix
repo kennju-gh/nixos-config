@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   virtualisation.libvirtd = {
     enable = true;
@@ -11,9 +14,9 @@
   virtualisation.spiceUSBRedirection.enable = true;
   programs.virt-manager.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    dnsmasq
-    spice-gtk
+  environment.systemPackages = [
+    pkgs.dnsmasq
+    pkgs.spice-gtk
   ];
 
   security.wrappers.spice-client-glib-usb-acl-helper.source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";

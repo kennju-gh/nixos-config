@@ -1,15 +1,18 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    yamllint
-    shellcheck
-    shfmt
-    hadolint
-    actionlint
-    nix-output-monitor
-    nixfmt
-    nixd
-    statix
-    deadnix
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.yamllint
+    pkgs.shellcheck
+    pkgs.shfmt
+    pkgs.hadolint
+    pkgs.actionlint
+    pkgs.nix-output-monitor
+    pkgs.nixfmt
+    pkgs.nixd
+    pkgs.statix
+    pkgs.deadnix
   ];
 }

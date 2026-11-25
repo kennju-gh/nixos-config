@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 {
   networking = {
     hostName = "nixos";
@@ -41,9 +45,9 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    wireguard-tools
+  environment.systemPackages = [
+    pkgs.networkmanagerapplet
+    pkgs.wireguard-tools
   ];
 
   environment.shellAliases = {

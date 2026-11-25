@@ -1,7 +1,10 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    swaybg
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.swaybg
   ];
 
   systemd.user.services.swaybg = {

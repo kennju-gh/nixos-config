@@ -1,4 +1,8 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.my.home.foliate;
   inherit (lib.gvariant) mkUint32;

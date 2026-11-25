@@ -1,7 +1,10 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    imv
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.imv
   ];
 
   xdg.configFile."imv/config".text = ''

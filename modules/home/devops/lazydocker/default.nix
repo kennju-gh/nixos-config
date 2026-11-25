@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    lazydocker
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.lazydocker
   ];
 }

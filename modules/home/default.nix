@@ -70,13 +70,13 @@
     ./media/coppwr
     ./media/foliate
     ./media/imv
-    ./media/kid3
+    ./media/kid3-qt
     ./media/mpd
     ./media/mpv
     ./media/rmpc
 
     # Messenger
-    ./messenger/telegram
+    ./messenger/telegram-desktop
     ./messenger/webcord
 
     # Security

@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    pince
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.pince
   ];
 }

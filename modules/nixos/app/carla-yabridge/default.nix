@@ -1,6 +1,6 @@
 {
-  lib,
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -14,10 +14,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      carla
-      yabridge
-      yabridgectl
+    environment.systemPackages = [
+      pkgs.carla
+      pkgs.yabridge
+      pkgs.yabridgectl
     ];
   };
 }

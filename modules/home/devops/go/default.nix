@@ -1,8 +1,11 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    go
-    gopls
-    gotools
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.go
+    pkgs.gopls
+    pkgs.gotools
   ];
 }

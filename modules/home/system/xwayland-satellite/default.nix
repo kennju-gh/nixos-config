@@ -13,8 +13,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      xwayland-satellite
+    home.packages = [
+      pkgs.xwayland-satellite
     ];
   };
 }

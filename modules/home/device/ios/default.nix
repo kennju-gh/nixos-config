@@ -13,9 +13,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      libimobiledevice
-      ifuse
+    home.packages = [
+      pkgs.libimobiledevice
+      pkgs.ifuse
     ];
   };
 }

@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    spectral-mic
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = [
+    pkgs.spectral-mic
   ];
 }

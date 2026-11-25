@@ -1,7 +1,11 @@
-{ pkgs, username, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    restic
+  username,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = [
+    pkgs.restic
   ];
 
   services.restic.backups = {

@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    mesa-demos
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.mesa-demos
   ];
 }

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   environment.pathsToLink = [ "share/thumbnailers" ];
 
@@ -27,8 +30,8 @@
   programs.dconf.enable = true;
   services.dbus = {
     enable = true;
-    packages = with pkgs; [
-      gcr_4
+    packages = [
+      pkgs.gcr_4
     ];
   };
 

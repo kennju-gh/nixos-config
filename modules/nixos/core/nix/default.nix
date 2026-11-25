@@ -1,8 +1,8 @@
 {
   config,
-  pkgs,
   inputs,
   username,
+  pkgs,
   ...
 }:
 {
@@ -83,8 +83,8 @@
     binfmt = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    nix-tree
+  environment.systemPackages = [
+    pkgs.nix-tree
   ];
 
   documentation.man.cache.enable = false;

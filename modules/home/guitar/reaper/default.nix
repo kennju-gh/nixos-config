@@ -10,12 +10,12 @@ let
 in
 {
   options.my.home.reaper = {
-    enable = mkEnableOption "REAPER DAW";
+    enable = mkEnableOption "reaper";
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      reaper
+    home.packages = [
+      pkgs.reaper
     ];
   };
 }

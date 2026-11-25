@@ -1,11 +1,14 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    nautilus
-    nautilus-python
-    nautilus-open-any-terminal
-    file-roller
-    wsdd
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = [
+    pkgs.nautilus
+    pkgs.nautilus-python
+    pkgs.nautilus-open-any-terminal
+    pkgs.file-roller
+    pkgs.wsdd
   ];
 
   services.gnome.sushi.enable = true;

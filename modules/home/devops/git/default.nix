@@ -1,4 +1,8 @@
-{ pkgs, config, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   programs.git = {
     enable = true;
@@ -53,9 +57,9 @@
     };
   };
 
-  home.packages = with pkgs; [
-    pre-commit
-    difftastic
-    git-filter-repo
+  home.packages = [
+    pkgs.pre-commit
+    pkgs.difftastic
+    pkgs.git-filter-repo
   ];
 }

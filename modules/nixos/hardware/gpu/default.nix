@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   hardware.graphics = {
     enable = true;
@@ -8,10 +11,13 @@
   hardware.enableRedistributableFirmware = true;
   hardware.amdgpu.overdrive.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    lact
+  environment.systemPackages = [
+    pkgs.lact
   ];
 
-  systemd.packages = with pkgs; [ lact ];
+  systemd.packages = [
+    pkgs.lact
+  ];
+
   systemd.services.lactd.wantedBy = [ "multi-user.target" ];
 }

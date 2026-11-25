@@ -1,7 +1,10 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    wlogout
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.wlogout
   ];
 
   xdg.configFile."wlogout/layout".source = ./configs/layout;

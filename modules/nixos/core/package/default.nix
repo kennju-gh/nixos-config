@@ -1,65 +1,68 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = [
     # Core system & Base utilities
-    coreutils
-    man-pages
-    procps
-    killall
-    file
-    pv
+    pkgs.coreutils
+    pkgs.man-pages
+    pkgs.procps
+    pkgs.killall
+    pkgs.file
+    pkgs.pv
 
     # Archives & File systems
-    trash-cli
-    gnutar
-    gzip
-    unzip
+    pkgs.trash-cli
+    pkgs.gnutar
+    pkgs.gzip
+    pkgs.unzip
 
     # Networking
-    wireguard-tools
-    dnsutils
-    openssh
-    socat
-    wget
-    curl
+    pkgs.wireguard-tools
+    pkgs.dnsutils
+    pkgs.openssh
+    pkgs.socat
+    pkgs.wget
+    pkgs.curl
 
     # CLI
-    ripgrep
-    dust
-    bat
-    eza
-    fd
+    pkgs.ripgrep
+    pkgs.dust
+    pkgs.bat
+    pkgs.eza
+    pkgs.fd
 
     # Audio & Media managment
-    playerctl
-    wiremix
-    pipewire.jack
+    pkgs.playerctl
+    pkgs.wiremix
+    pkgs.pipewire.jack
 
     # Hadrware, Diagnostics & Monitoring
-    smartmontools
-    dmidecode
-    lm_sensors
-    powertop
-    pciutils
-    usbutils
-    nvme-cli
-    ddcutil
-    nftables
-    e2fsprogs
-    tldr
-    ncdu
-    lsof
-    strace
-    nvtopPackages.amd
+    pkgs.smartmontools
+    pkgs.dmidecode
+    pkgs.lm_sensors
+    pkgs.powertop
+    pkgs.pciutils
+    pkgs.usbutils
+    pkgs.nvme-cli
+    pkgs.ddcutil
+    pkgs.nftables
+    pkgs.e2fsprogs
+    pkgs.tldr
+    pkgs.ncdu
+    pkgs.lsof
+    pkgs.strace
+    pkgs.nvtopPackages.amd
 
     # Grafics & Notifications
-    libnotify
+    pkgs.libnotify
 
     # Thumbnails
-    ffmpegthumbnailer
-    ffmpeg-headless
+    pkgs.ffmpegthumbnailer
+    pkgs.ffmpeg-headless
 
     # Cryptography, Secrets & Recovery
-    gnupg
+    pkgs.gnupg
   ];
 }

@@ -13,8 +13,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      qalculate-gtk
+    home.packages = [
+      pkgs.qalculate-gtk
     ];
   };
 }

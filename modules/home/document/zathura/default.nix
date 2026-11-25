@@ -13,9 +13,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      zathura
-      zathuraPkgs.zathura_pdf_mupdf
+    home.packages = [
+      pkgs.zathura
+      pkgs.zathuraPkgs.zathura_pdf_mupdf
     ];
   };
 }

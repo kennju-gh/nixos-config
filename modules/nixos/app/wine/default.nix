@@ -1,6 +1,6 @@
 {
-  lib,
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -10,13 +10,13 @@ let
 in
 {
   options.my.system.wine = {
-    enable = mkEnableOption "Wine";
+    enable = mkEnableOption "wine";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      wineWow64Packages.stable
-      winetricks
+    environment.systemPackages = [
+      pkgs.wineWow64Packages.stable
+      pkgs.winetricks
     ];
   };
 }

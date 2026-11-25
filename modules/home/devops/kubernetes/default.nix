@@ -1,12 +1,15 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    kubectl
-    kubectx
-    kubernetes-helm
-    kubeconform
-    kustomize
-    k9s
-    stern
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.kubectl
+    pkgs.kubectx
+    pkgs.kubernetes-helm
+    pkgs.kubeconform
+    pkgs.kustomize
+    pkgs.k9s
+    pkgs.stern
   ];
 }

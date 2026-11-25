@@ -1,6 +1,9 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    trivy
+  pkgs,
+  ...
+}:
+{
+  home.packages = [
+    pkgs.trivy
   ];
 }
