@@ -9,7 +9,6 @@
   config = {
     # == System modules (NixOS)
     # -- Enable system-level features here:
-
     boot.kernelParams = [
       # amdgpu params are kept commented for debugging reference.
       # "amdgpu.dcdebugmask=0x410"
@@ -62,9 +61,7 @@
 
     # == User modules (Home Manager)
     # -- Enable user-level features here:
-
     home-manager.users.${username} = {
-
       # Backup
       my.home.rsync.enable = true;
 
@@ -91,6 +88,18 @@
       my.home.coppwr.enable = true;
       my.home.foliate.enable = true;
 
+      # System
+      my.home.xdg-mime = {
+        enable = true;
+        book = true;
+        browser = true;
+        dev = true;
+        file-manager = true;
+        media = true;
+        office = true;
+        pdf = true;
+        wine = true;
+      };
     };
   };
 }
