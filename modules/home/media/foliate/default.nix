@@ -5,7 +5,7 @@ let
 in
 {
   options.my.home.foliate = {
-    enable = lib.mkEnableOption "Foliate";
+    enable = lib.mkEnableOption "foliate";
   };
 
   config = lib.mkIf cfg.enable {
