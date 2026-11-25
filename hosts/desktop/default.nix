@@ -104,7 +104,7 @@
       my.home.xwayland-satellite.enable = true;
 
       # Windows
-
+      my.home.wine.enable = true;
     };
   };
 }
