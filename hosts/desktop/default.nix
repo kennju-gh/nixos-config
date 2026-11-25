@@ -78,6 +78,7 @@
       # Desktop
 
       # Device
+      my.home.ios.enable = true;
 
       # DevOps
       my.home.vscode.enable = true;
@@ -98,6 +99,11 @@
       my.home.coppwr.enable = true;
       my.home.foliate.enable = true;
 
+      # Security
+      my.home.gpg.enable = true;
+
+      # Shell
+
       # System
       my.home.xdg-dir.enable = true;
       my.home.xdg-mime = {
@@ -114,7 +120,7 @@
       my.home.xwayland-satellite.enable = true;
 
       # Windows
-      my.home.wine.enable = true;
+      my.home.wine-prefix.enable = true;
     };
   };
 }
