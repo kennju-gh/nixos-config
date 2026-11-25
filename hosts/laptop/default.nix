@@ -81,11 +81,13 @@
     # -- Enable system-level features here:
 
     # Hardware
-    my.system.audio = {
+    my.system.logind.enable = true;
+    my.system.pipewire = {
       enable = true;
       minQuantum = 256;
       maxQuantum = 2048;
     };
-    my.system.logind.enable = true;
+    my.system.pipewire-jack.enable = false;
+    my.system.wireplumber-disable-hdmi-dp.enable = false;
   };
 }

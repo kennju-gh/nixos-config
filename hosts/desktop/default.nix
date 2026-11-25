@@ -98,10 +98,20 @@
     boot.kernelModules = [ "coretemp" ];
 
     # Hardware
-    my.system.audio = {
+    my.system.logind.enable = false;
+    my.system.pipewire = {
       enable = true;
       minQuantum = 256;
       maxQuantum = 2048;
+    };
+    my.system.pipewire-jack = {
+      enable = true;
+      quantum = 256;
+      rate = 48000;
+    };
+    my.system.wireplumber-disable-hdmi-dp = {
+      enable = true;
+      devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
     };
 
     # Network
@@ -110,9 +120,5 @@
     # Service
     my.system.sunshine.enable = true;
     my.system.sunshine-stream.enable = true;
-    my.system.wireplumber-disable-hdmi-dp = {
-      enable = true;
-      devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
-    };
   };
 }

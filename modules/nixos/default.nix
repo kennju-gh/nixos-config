@@ -31,12 +31,14 @@
     ./desktop/uwsm
 
     # Hardware
-    ./hardware/audio
     ./hardware/bluetooth
     ./hardware/cpu
     ./hardware/gpu
     ./hardware/logind
+    ./hardware/pipewire
+    ./hardware/pipewire-jack
     ./hardware/power
+    ./hardware/wireplumber-disable-hdmi-dp
 
     # Network
     ./network/fail2ban
@@ -56,7 +58,6 @@
     ./service/sunshine
     ./service/sunshine-stream
     ./service/tg-ws-proxy
-    ./service/wireplumber-disable-hdmi-dp
 
     # User
     ./user

@@ -1,14 +1,13 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
-  cfg = config.my.system.audio;
+  cfg = config.my.system.pipewire;
 in
 {
-  options.my.system.audio = {
+  options.my.system.pipewire = {
     enable = lib.mkEnableOption "PipeWire audio stack";
 
     minQuantum = lib.mkOption {
@@ -32,7 +31,7 @@ in
       pulse.enable = true;
       wireplumber.enable = true;
 
-      extraConfig.pipewire."92-low-latency" = {
+      extraConfig.pipewire."92-pipewire-properties" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
           "default.clock.min-quantum" = cfg.minQuantum;
@@ -57,6 +56,5 @@ in
     ];
 
     security.rtkit.enable = true;
-    environment.variables.LD_LIBRARY_PATH = "${pkgs.pipewire.jack}/lib";
   };
 }
