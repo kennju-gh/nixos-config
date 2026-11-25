@@ -14,7 +14,7 @@ in
 
     minQuantum = mkOption {
       type = types.int;
-      default = 128;
+      default = 256;
       description = "Minimum PipeWire quantum";
     };
 
