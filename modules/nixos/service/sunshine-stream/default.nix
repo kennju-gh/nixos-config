@@ -4,16 +4,15 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.my.system.sunshine-stream;
 in
 {
   options.my.system.sunshine-stream = {
-    enable = mkEnableOption "sunshine-stream";
+    enable = lib.mkEnableOption "sunshine-stream";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "sunshine-stream" ''
         #!/usr/bin/env bash

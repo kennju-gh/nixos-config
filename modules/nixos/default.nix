@@ -2,7 +2,6 @@
 {
   imports = [
     # App
-    ./app/carla-yabridge
     ./app/docker
     ./app/nautilus
     ./app/spectral

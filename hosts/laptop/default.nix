@@ -45,7 +45,9 @@
       my.home.obs.enable = false; # temporarily disabled
 
       # Guitar
+      my.home.carla.enable = false; # temporarily disabled
       my.home.reaper.enable = false; # temporarily disabled
+      my.home.yabridge.enable = false; # temporarily disabled
 
       # Media
       my.home.coppwr.enable = true;

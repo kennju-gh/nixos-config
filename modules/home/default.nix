@@ -65,7 +65,9 @@
     ./gaming/qbittorrent
 
     # Guitar
+    ./guitar/carla
     ./guitar/reaper
+    ./guitar/yabridge
 
     # Media
     ./media/coppwr

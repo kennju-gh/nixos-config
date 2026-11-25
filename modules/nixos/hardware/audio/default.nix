@@ -4,28 +4,27 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.my.system.audio;
 in
 {
   options.my.system.audio = {
-    enable = mkEnableOption "PipeWire audio stack";
+    enable = lib.mkEnableOption "PipeWire audio stack";
 
-    minQuantum = mkOption {
-      type = types.int;
+    minQuantum = lib.mkOption {
+      type = lib.types.int;
       default = 256;
       description = "Minimum PipeWire quantum";
     };
 
-    maxQuantum = mkOption {
-      type = types.int;
+    maxQuantum = lib.mkOption {
+      type = lib.types.int;
       default = 2048;
       description = "Maximum PipeWire quantum";
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services.pipewire = {
       enable = true;
       alsa.enable = true;

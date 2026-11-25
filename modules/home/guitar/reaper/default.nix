@@ -4,16 +4,15 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.my.home.reaper;
 in
 {
   options.my.home.reaper = {
-    enable = mkEnableOption "reaper";
+    enable = lib.mkEnableOption "reaper";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.reaper
     ];

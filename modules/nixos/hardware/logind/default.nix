@@ -3,16 +3,15 @@
   lib,
   ...
 }:
-with lib;
 let
   cfg = config.my.system.logind;
 in
 {
   options.my.system.logind = {
-    enable = mkEnableOption "logind";
+    enable = lib.mkEnableOption "logind";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services.logind.settings.Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchDocked = "suspend";

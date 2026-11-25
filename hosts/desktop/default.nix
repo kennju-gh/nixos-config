@@ -45,7 +45,9 @@
       my.home.obs.enable = true;
 
       # Guitar
+      my.home.carla.enable = true;
       my.home.reaper.enable = true;
+      my.home.yabridge.enable = true;
 
       # Media
       my.home.coppwr.enable = true;
@@ -79,7 +81,6 @@
     # -- Enable system-level features here:
 
     # App
-    my.system.carla-yabridge.enable = true;
     my.system.virt-manager.enable = true;
     my.system.wine.enable = true;
 

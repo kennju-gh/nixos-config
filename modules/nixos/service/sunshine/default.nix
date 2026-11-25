@@ -1,14 +1,17 @@
-{ config, lib, ... }:
-with lib;
+{
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.my.system.sunshine;
 in
 {
   options.my.system.sunshine = {
-    enable = mkEnableOption "Sunshine game streaming host";
+    enable = lib.mkEnableOption "Sunshine game streaming host";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services.sunshine = {
       enable = true;
       autoStart = false;
