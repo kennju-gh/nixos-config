@@ -1,9 +1,6 @@
 { ... }:
 {
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-  };
+  qt.enable = true;
 
   stylix.targets.qt.standardDialogs = "xdgdesktopportal";
 }
