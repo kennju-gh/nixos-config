@@ -13,7 +13,6 @@
     # Audio & Media managment
     pkgs.playerctl
     pkgs.wiremix
-    pkgs.pipewire.jack
 
     # Core system & Base utilities
     pkgs.coreutils

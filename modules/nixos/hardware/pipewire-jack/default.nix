@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -31,7 +30,5 @@ in
         "default.clock.rate" = cfg.rate;
       };
     };
-
-    environment.variables.LD_LIBRARY_PATH = "${pkgs.pipewire.jack}/lib";
   };
 }
