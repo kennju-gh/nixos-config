@@ -7,45 +7,6 @@
   ];
 
   config = {
-    # == System modules (NixOS)
-    # -- Enable system-level features here:
-
-    # App
-    my.system.carla-yabridge.enable = true;
-    my.system.virt-manager.enable = true;
-    my.system.wine.enable = true;
-
-    # Core
-    boot.kernelParams = [
-      # amdgpu params are kept commented for debugging reference.
-      # "amdgpu.dcdebugmask=0x410"
-      # "amdgpu.no_vpe_idle_pg=1"
-      # "amdgpu.runpm=0"
-      "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot.
-      "video=HDMI-A-1:2560x1440@120"
-      "video=DP-2:1920x1080@60"
-    ];
-    boot.initrd.kernelModules = [ "amdgpu" ];
-    boot.kernelModules = [ "coretemp" ];
-
-    # Hardware
-    my.system.audio = {
-      enable = true;
-      quantum = 512;
-      minQuantum = 64;
-      maxQuantum = 1024;
-    };
-
-    # Network
-    my.system.tailscale.enable = true;
-
-    # Service
-    my.system.sunshine.enable = true;
-    my.system.sunshine-stream.enable = true;
-    my.system.wireplumber-disable-hdmi-dp = {
-      enable = true;
-      devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
-    };
 
     # == User modules (Home Manager)
     # -- Enable user-level features here:
@@ -112,6 +73,46 @@
 
       # Windows
       my.home.wine-prefix.enable = true;
+    };
+
+    # == System modules (NixOS)
+    # -- Enable system-level features here:
+
+    # App
+    my.system.carla-yabridge.enable = true;
+    my.system.virt-manager.enable = true;
+    my.system.wine.enable = true;
+
+    # Core
+    boot.kernelParams = [
+      # amdgpu params are kept commented for debugging reference.
+      # "amdgpu.dcdebugmask=0x410"
+      # "amdgpu.no_vpe_idle_pg=1"
+      # "amdgpu.runpm=0"
+      "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot.
+      "video=HDMI-A-1:2560x1440@120"
+      "video=DP-2:1920x1080@60"
+    ];
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    boot.kernelModules = [ "coretemp" ];
+
+    # Hardware
+    my.system.audio = {
+      enable = true;
+      quantum = 512;
+      minQuantum = 64;
+      maxQuantum = 1024;
+    };
+
+    # Network
+    my.system.tailscale.enable = true;
+
+    # Service
+    my.system.sunshine.enable = true;
+    my.system.sunshine-stream.enable = true;
+    my.system.wireplumber-disable-hdmi-dp = {
+      enable = true;
+      devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
     };
   };
 }
