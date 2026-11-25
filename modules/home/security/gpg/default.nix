@@ -59,7 +59,7 @@ in
       enableScDaemon = false;
     };
 
-    home.sessionVariables = {
+    systemd.user.sessionVariables = {
       SSH_AUTH_SOCK = "/run/user/${toString config.home.uid}/gnupg/S.gpg-agent.ssh";
     };
   };
