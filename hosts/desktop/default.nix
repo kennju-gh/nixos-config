@@ -75,11 +75,18 @@
       my.home.neovim.enable = true;
       my.home.yazi.enable = true;
 
+      # Desktop
+
+      # Device
+
       # DevOps
       my.home.vscode.enable = true;
 
       # Document
-      my.home.libreoffice.enable = false; # temporarily disabled
+      my.home.libreoffice-qt.enable = false; # temporarily disabled
+      my.home.obsidian.enable = true;
+      my.home.qalculate-gtk.enable = true;
+      my.home.zathura.enable = true;
 
       # Gaming
       my.home.obs.enable = true;

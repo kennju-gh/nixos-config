@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.my.home.libreoffice;
+  cfg = config.my.home.libreoffice-qt;
 in
 {
-  options.my.home.libreoffice = {
+  options.my.home.libreoffice-qt = {
     enable = lib.mkEnableOption "libreoffice-qt";
   };
 

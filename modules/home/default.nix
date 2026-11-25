@@ -51,9 +51,9 @@
     ./devops/vscode
 
     # Document
-    ./document/calculator
-    ./document/libreoffice
+    ./document/libreoffice-qt
     ./document/obsidian
+    ./document/qalculate-gtk
     ./document/zathura
 
     # Gaming
