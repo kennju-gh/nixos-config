@@ -25,9 +25,8 @@ in
 
   config = lib.mkIf cfg.enable {
     services.pipewire.extraConfig.jack."92-pipewire-jack-properties" = {
-      "context.properties" = {
-        "default.clock.quantum" = cfg.quantum;
-        "default.clock.rate" = cfg.rate;
+      "jack.properties" = {
+        "node.latency" = "${toString cfg.quantum}/${toString cfg.rate}";
       };
     };
   };
