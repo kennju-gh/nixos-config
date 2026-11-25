@@ -1,11 +1,11 @@
 { config, lib, ... }:
 with lib;
 let
-  cfg = config.my.system.wireplumber.disableHdmiDp;
+  cfg = config.my.system.wireplumber-disable-hdmi-dp;
 in
 {
-  options.my.system.wireplumber.disableHdmiDp = {
-    enable = mkEnableOption "disable HDMI/DisplayPort audio devices via WirePlumber";
+  options.my.system.wireplumber-disable-hdmi-dp = {
+    enable = mkEnableOption "wireplumber-disable-hdmi-dp";
 
     devices = mkOption {
       type = types.listOf types.str;

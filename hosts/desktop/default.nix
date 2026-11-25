@@ -9,6 +9,13 @@
   config = {
     # == System modules (NixOS)
     # -- Enable system-level features here:
+
+    # App
+    my.system.carla-yabridge.enable = true;
+    my.system.virt-manager.enable = true;
+    my.system.wine.enable = true;
+
+    # Core
     boot.kernelParams = [
       # amdgpu params are kept commented for debugging reference.
       # "amdgpu.dcdebugmask=0x410"
@@ -18,50 +25,33 @@
       "video=HDMI-A-1:2560x1440@120"
       "video=DP-2:1920x1080@60"
     ];
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    boot.kernelModules = [ "coretemp" ];
 
-    boot.initrd.kernelModules = [
-      "amdgpu"
-    ];
-
-    boot.kernelModules = [
-      "coretemp"
-    ];
-
-    my.system.wine = {
-      enable = true;
-    };
-
-    my.system.carla-yabridge = {
-      enable = true;
-    };
-
-    my.system.tailscale = {
-      enable = true;
-    };
-
-    my.system.sunshine = {
-      enable = true;
-    };
-
+    # Hardware
     my.system.audio = {
       enable = true;
-      quantum = 256;
+      quantum = 512;
       minQuantum = 64;
       maxQuantum = 1024;
     };
 
-    my.system.wireplumber.disableHdmiDp = {
+    # Network
+    my.system.tailscale.enable = true;
+
+    # Service
+    my.system.sunshine.enable = true;
+    my.system.sunshine-stream.enable = true;
+    my.system.wireplumber-disable-hdmi-dp = {
       enable = true;
       devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)
     };
 
-    my.system.sunshineStream = {
-      enable = true;
-    };
-
     # == User modules (Home Manager)
     # -- Enable user-level features here:
+
     home-manager.users.${username} = {
+
       # Backup
       my.home.rsync.enable = true;
 

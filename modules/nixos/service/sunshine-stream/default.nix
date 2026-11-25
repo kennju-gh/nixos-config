@@ -6,11 +6,11 @@
 }:
 with lib;
 let
-  cfg = config.my.system.sunshineStream;
+  cfg = config.my.system.sunshine-stream;
 in
 {
-  options.my.system.sunshineStream = {
-    enable = mkEnableOption "Sunshine streaming script with audio routing";
+  options.my.system.sunshine-stream = {
+    enable = mkEnableOption "sunshine-stream";
   };
 
   config = mkIf cfg.enable {
