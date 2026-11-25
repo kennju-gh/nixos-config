@@ -56,6 +56,15 @@
     TDESKTOP_USE_GTK_FILE_DIALOG = 1;
   };
 
+  # Portal
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
+
   # Disable unnecessary services
   services.printing.enable = false;
   services.avahi.enable = false;
