@@ -1,6 +1,6 @@
 {
-  lib,
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -12,21 +12,15 @@ in
   options.my.system.audio = {
     enable = mkEnableOption "PipeWire audio stack";
 
-    quantum = mkOption {
-      type = types.int;
-      default = 256;
-      description = "PipeWire quantum";
-    };
-
     minQuantum = mkOption {
       type = types.int;
-      default = 64;
+      default = 128;
       description = "Minimum PipeWire quantum";
     };
 
     maxQuantum = mkOption {
       type = types.int;
-      default = 1024;
+      default = 2048;
       description = "Maximum PipeWire quantum";
     };
   };
@@ -42,7 +36,6 @@ in
       extraConfig.pipewire."92-low-latency" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
-          "default.clock.quantum" = cfg.quantum;
           "default.clock.min-quantum" = cfg.minQuantum;
           "default.clock.max-quantum" = cfg.maxQuantum;
         };
