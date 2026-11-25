@@ -60,6 +60,9 @@ in
           "nix.enableLanguageServer" = true;
           "nix.hiddenLanguageServerErrors" = [
             "textDocument/definition"
+            "textDocument/references"
+            "textDocument/typeDefinition"
+            "textDocument/hover"
           ];
           "terminal.integrated.env.linux" = {
             NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
