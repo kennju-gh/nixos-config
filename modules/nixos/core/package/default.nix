@@ -4,6 +4,17 @@
 }:
 {
   environment.systemPackages = [
+    # Archives & File systems
+    pkgs.trash-cli
+    pkgs.gnutar
+    pkgs.gzip
+    pkgs.unzip
+
+    # Audio & Media managment
+    pkgs.playerctl
+    pkgs.wiremix
+    pkgs.pipewire.jack
+
     # Core system & Base utilities
     pkgs.coreutils
     pkgs.man-pages
@@ -12,20 +23,6 @@
     pkgs.file
     pkgs.pv
 
-    # Archives & File systems
-    pkgs.trash-cli
-    pkgs.gnutar
-    pkgs.gzip
-    pkgs.unzip
-
-    # Networking
-    pkgs.wireguard-tools
-    pkgs.dnsutils
-    pkgs.openssh
-    pkgs.socat
-    pkgs.wget
-    pkgs.curl
-
     # CLI
     pkgs.ripgrep
     pkgs.dust
@@ -33,10 +30,11 @@
     pkgs.eza
     pkgs.fd
 
-    # Audio & Media managment
-    pkgs.playerctl
-    pkgs.wiremix
-    pkgs.pipewire.jack
+    # Cryptography, Secrets
+    pkgs.gnupg
+
+    # Grafics & Notifications
+    pkgs.libnotify
 
     # Hadrware, Diagnostics & Monitoring
     pkgs.smartmontools
@@ -53,16 +51,17 @@
     pkgs.ncdu
     pkgs.lsof
     pkgs.strace
-    pkgs.nvtopPackages.amd
 
-    # Grafics & Notifications
-    pkgs.libnotify
+    # Networking
+    pkgs.wireguard-tools
+    pkgs.dnsutils
+    pkgs.openssh
+    pkgs.socat
+    pkgs.wget
+    pkgs.curl
 
     # Thumbnails
     pkgs.ffmpegthumbnailer
     pkgs.ffmpeg-headless
-
-    # Cryptography, Secrets & Recovery
-    pkgs.gnupg
   ];
 }

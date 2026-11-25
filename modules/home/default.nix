@@ -12,6 +12,7 @@
     ./cli/diskwatch
     ./cli/fastfetch
     ./cli/neovim
+    ./cli/nvtop
     ./cli/yazi
 
     # Desktop

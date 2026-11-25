@@ -73,6 +73,7 @@
       my.home.diskwatch.enable = true;
       my.home.fastfetch.enable = true;
       my.home.neovim.enable = true;
+      my.home.nvtop.enable = true;
       my.home.yazi.enable = true;
 
       # Desktop
