@@ -78,6 +78,9 @@
       # DevOps
       my.home.vscode.enable = true;
 
+      # Document
+      my.home.libreoffice.enable = false; # temporarily disabled
+
       # Gaming
       my.home.obs.enable = true;
 
@@ -97,7 +100,7 @@
         dev = true;
         file-manager = true;
         media = true;
-        office = false;
+        office = false; # temporarily disabled
         pdf = true;
         wine = true;
       };
