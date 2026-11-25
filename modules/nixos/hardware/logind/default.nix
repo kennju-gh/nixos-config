@@ -1,10 +1,16 @@
-{ lib, config, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 with lib;
 let
   cfg = config.my.system.logind;
 in
 {
-  options.my.system.logind.enable = mkEnableOption "logind power management";
+  options.my.system.logind = {
+    enable = mkEnableOption "logind";
+  };
 
   config = mkIf cfg.enable {
     services.logind.settings.Login = {

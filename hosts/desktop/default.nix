@@ -99,9 +99,8 @@
     # Hardware
     my.system.audio = {
       enable = true;
-      quantum = 512;
-      minQuantum = 64;
-      maxQuantum = 1024;
+      minQuantum = 256;
+      maxQuantum = 2048;
     };
 
     # Network
