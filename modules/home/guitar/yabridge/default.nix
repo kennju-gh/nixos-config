@@ -17,5 +17,8 @@ in
       pkgs.yabridge
       pkgs.yabridgectl
     ];
+
+    home.file.".local/share/yabridge/yabridge-host.exe".source =
+      "${pkgs.yabridge}/bin/yabridge-host.exe";
   };
 }
