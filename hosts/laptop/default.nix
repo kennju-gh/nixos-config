@@ -152,6 +152,9 @@
     # -- Enable system-level features here:
 
     # App
+    my.system.docker.enable = true;
+    my.system.nautilus.enable = true;
+    my.system.steam.enable = true;
     my.system.virt-manager.enable = false; # disabled
     my.system.wine.enable = false; # disabled
 
