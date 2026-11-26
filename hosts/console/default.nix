@@ -192,6 +192,7 @@
     my.system.fonts.enable = true;
     my.system.getty.enable = true;
     my.system.niri.enable = true;
+    my.system.stylix.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled

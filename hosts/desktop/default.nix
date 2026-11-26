@@ -209,6 +209,7 @@
       session = "niri.desktop";
     };
     my.system.niri.enable = true;
+    my.system.stylix.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled
