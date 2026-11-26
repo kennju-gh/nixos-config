@@ -20,7 +20,7 @@ in
       pkgs.gzip
       pkgs.unzip
 
-      # Audio & Media managment
+      # Audio & Media management
       pkgs.playerctl
       pkgs.wiremix
 
@@ -42,10 +42,10 @@ in
       # Cryptography, Secrets
       pkgs.gnupg
 
-      # Grafics & Notifications
+      # Graphics & Notifications
       pkgs.libnotify
 
-      # Hadrware, Diagnostics & Monitoring
+      # Hardware, Diagnostics & Monitoring
       pkgs.smartmontools
       pkgs.dmidecode
       pkgs.lm_sensors
