@@ -16,6 +16,12 @@ in
     home.packages = [
       pkgs.python3
       pkgs.uv
+      pkgs.ruff
+      pkgs.basedpyright
+    ];
+
+    home.sessionPath = [
+      "${config.home.homeDirectory}/.local/bin"
     ];
   };
 }
