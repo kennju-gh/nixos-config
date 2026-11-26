@@ -111,6 +111,9 @@
       my.home.mpv.enable = true;
       my.home.rmpc.enable = true;
 
+      # Messenger
+      my.home.telegram-desktop.enable = true;
+
       # Security
       my.home.gpg.enable = true;
 
