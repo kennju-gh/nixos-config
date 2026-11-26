@@ -202,6 +202,7 @@
 
     # Desktop
     my.system.codec.enable = true;
+    my.system.environment.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled
