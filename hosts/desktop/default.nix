@@ -95,6 +95,7 @@
       my.home.obs-studio.enable = true;
       my.home.mesa-demos.enable = true;
       my.home.pince.enable = true;
+      my.home.qbittorrent.enable = true;
 
       # Guitar
       my.home.carla.enable = true;
