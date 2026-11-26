@@ -106,6 +106,7 @@
       my.home.coppwr.enable = true;
       my.home.foliate.enable = true;
       my.home.imv.enable = true;
+      my.home.kid3-qt.enable = true;
 
       # Security
       my.home.gpg.enable = true;
