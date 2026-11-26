@@ -13,5 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.rmpc.enable = true;
+
+    xdg.configFile."rmpc/config.ron".source = ./configs/config.ron;
   };
 }
