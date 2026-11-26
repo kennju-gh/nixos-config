@@ -28,6 +28,28 @@
       my.home.yazi.enable = true;
 
       # Desktop
+      my.home.fuzzel.enable = true;
+      my.home.gtk.enable = true;
+      my.home.hypridle = {
+        enable = true;
+        lock.enable = false;
+        timeouts = {
+          lock = 180;
+          monitorOff = 200;
+          suspend = 420;
+        };
+      };
+
+      # my.home.hyprlock.enable = true;
+      # my.home.mako.enable = true;
+      # my.home.nautilus.enable = true;
+      # my.home.niri.enable = true;
+      # my.home.qt.enable = true;
+      # my.home.swaybg.enable = true;
+      # my.home.tomat.enable = true;
+      # my.home.waybar.enable = true;
+      # my.home.wl-clip-persist.enable = true;
+      # my.home.wlogout.enable = true;
 
       # Device
       my.home.ios.enable = true;
