@@ -17,6 +17,12 @@ in
       pkgs.go
       pkgs.gopls
       pkgs.gotools
+      pkgs.golangci-lint
+      pkgs.delve
+    ];
+
+    home.sessionPath = [
+      "${config.home.homeDirectory}/go/bin"
     ];
   };
 }
