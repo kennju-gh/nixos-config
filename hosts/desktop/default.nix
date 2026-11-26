@@ -120,6 +120,7 @@
       my.home.keepassxc.enable = true;
 
       # Shell
+      my.home.direnv.enable = true;
 
       # System
       my.home.xdg-dir.enable = true;

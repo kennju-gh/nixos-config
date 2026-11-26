@@ -91,7 +91,11 @@
       my.home.zathura.enable = true;
 
       # Gaming
+      my.home.mangohud.enable = true;
       my.home.obs-studio.enable = false; # disabled
+      my.home.mesa-demos.enable = true;
+      my.home.pince.enable = true;
+      my.home.qbittorrent.enable = true;
 
       # Guitar
       my.home.carla.enable = false; # disabled
@@ -101,9 +105,19 @@
       # Media
       my.home.coppwr.enable = true;
       my.home.foliate.enable = true;
+      my.home.imv.enable = true;
+      my.home.kid3-qt.enable = false; # disabled
+      my.home.mpd.enable = true;
+      my.home.mpv.enable = true;
+      my.home.rmpc.enable = true;
+
+      # Messenger
+      my.home.telegram-desktop.enable = true;
+      my.home.webcord.enable = false; # disabled
 
       # Security
       my.home.gpg.enable = true;
+      my.home.keepassxc.enable = true;
 
       # Shell
 
