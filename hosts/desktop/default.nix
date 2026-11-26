@@ -108,6 +108,7 @@
       my.home.imv.enable = true;
       my.home.kid3-qt.enable = true;
       my.home.mpd.enable = true;
+      my.home.mpv.enable = true;
 
       # Security
       my.home.gpg.enable = true;
