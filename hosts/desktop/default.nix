@@ -72,7 +72,7 @@
       my.home.git.enable = true;
       my.home.glab.enable = true;
       my.home.go.enable = true;
-      # my.home.json-yaml.enable = true;
+      my.home.json-yaml.enable = true;
       # my.home.just.enable = true;
       # my.home.kubernetes.enable = true;
       # my.home.lazydocker.enable = true;
