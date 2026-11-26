@@ -39,9 +39,8 @@
           suspend = 420;
         };
       };
-
-      # my.home.hyprlock.enable = true;
-      # my.home.mako.enable = true;
+      my.home.hyprlock.enable = true;
+      my.home.mako.enable = true;
       # my.home.nautilus.enable = true;
       # my.home.niri.enable = true;
       # my.home.qt.enable = true;
