@@ -110,6 +110,7 @@
       my.home.mpd.enable = true;
       my.home.mpv.enable = true;
       my.home.rmpc.enable = true;
+      my.home.spectral-mic.enable = false; # disabled
 
       # Messenger
       my.home.telegram-desktop.enable = false; # disabled

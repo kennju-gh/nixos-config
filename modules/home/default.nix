@@ -77,6 +77,7 @@
     ./media/mpd
     ./media/mpv
     ./media/rmpc
+    ./media/spectral-mic
 
     # Messenger
     ./messenger/telegram-desktop
