@@ -152,6 +152,7 @@
 
     # App
     my.system.docker.enable = true;
+    my.system.nautilus.enable = true;
     my.system.virt-manager.enable = true;
     my.system.wine.enable = true;
 
