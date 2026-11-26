@@ -1,6 +1,19 @@
-{ ... }:
 {
-  qt.enable = true;
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.my.home.qt;
+in
+{
+  options.my.home.qt = {
+    enable = lib.mkEnableOption "qt";
+  };
 
-  stylix.targets.qt.standardDialogs = "xdgdesktopportal";
+  config = lib.mkIf cfg.enable {
+    qt.enable = true;
+
+    stylix.targets.qt.standardDialogs = "xdgdesktopportal";
+  };
 }

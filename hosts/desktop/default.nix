@@ -46,7 +46,7 @@
         enable = true;
         profile = "desktop";
       };
-      # my.home.qt.enable = true;
+      my.home.qt.enable = true;
       # my.home.swaybg.enable = true;
       # my.home.tomat.enable = true;
       # my.home.waybar.enable = true;
