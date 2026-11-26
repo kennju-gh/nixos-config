@@ -113,6 +113,7 @@
 
       # Messenger
       my.home.telegram-desktop.enable = true;
+      my.home.webcord.enable = true;
 
       # Security
       my.home.gpg.enable = true;
