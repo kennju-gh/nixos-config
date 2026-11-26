@@ -176,6 +176,10 @@
       defaultLocale = "en_US.UTF-8";
       keyMap = "us";
     };
+    my.system.nix = {
+      enable = true;
+      # stateVersion = "26.05"; # set to current NixOS release at initial install
+    };
 
     # Hardware
     my.system.logind.enable = true;

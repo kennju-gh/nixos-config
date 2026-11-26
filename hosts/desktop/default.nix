@@ -190,6 +190,10 @@
       defaultLocale = "en_US.UTF-8";
       keyMap = "us";
     };
+    my.system.nix = {
+      enable = true;
+      stateVersion = "26.05";
+    };
 
     # Hardware
     my.system.logind.enable = false; # disabled
