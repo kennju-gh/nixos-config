@@ -183,6 +183,7 @@
     my.system.oomd.enable = true;
     my.system.package.enable = true;
     my.system.swap.enable = true;
+    my.system.tmpfiles.enable = true;
 
     # Hardware
     my.system.logind.enable = true;

@@ -1,27 +1,41 @@
-{ username, ... }:
 {
-  systemd.tmpfiles.rules = [
-    # Docker
-    "d /var/lib/docker 0711 root root - -"
+  username,
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.my.system.tmpfiles;
+in
+{
+  options.my.system.tmpfiles = {
+    enable = lib.mkEnableOption "tmpfiles";
+  };
 
-    # Podman
-    "d /var/lib/containers/storage 0700 root root - -"
+  config = lib.mkIf cfg.enable {
+    systemd.tmpfiles.rules = [
+      # Docker
+      "d /var/lib/docker 0711 root root - -"
 
-    # Libvirt
-    "d /var/lib/libvirt 0755 root root - -"
-    "d /var/lib/libvirt/images 0755 root root - -"
+      # Podman
+      "d /var/lib/containers/storage 0700 root root - -"
 
-    # Subvolumes
-    "d /.podman 0700 ${username} users - -"
-    "d /.steam 0770 ${username} users - -"
-    "d /.wine 0770 ${username} users - -"
-    "d /.vm 0755 root libvirtd - -"
+      # Libvirt
+      "d /var/lib/libvirt 0755 root root - -"
+      "d /var/lib/libvirt/images 0755 root root - -"
 
-    # Steam & Podman-rootless
-    "d /home/${username}/.local 0755 ${username} users - -"
-    "d /home/${username}/.local/share 0755 ${username} users - -"
-    "d /home/${username}/.local/share/Steam 0770 ${username} users - -"
-    "d /home/${username}/.local/share/containers 0700 ${username} users - -"
-    "d /home/${username}/.local/share/containers/storage 0700 ${username} users - -"
-  ];
+      # Subvolumes
+      "d /.podman 0700 ${username} users - -"
+      "d /.steam 0770 ${username} users - -"
+      "d /.wine 0770 ${username} users - -"
+      "d /.vm 0755 root libvirtd - -"
+
+      # Steam & Podman-rootless
+      "d /home/${username}/.local 0755 ${username} users - -"
+      "d /home/${username}/.local/share 0755 ${username} users - -"
+      "d /home/${username}/.local/share/Steam 0770 ${username} users - -"
+      "d /home/${username}/.local/share/containers 0700 ${username} users - -"
+      "d /home/${username}/.local/share/containers/storage 0700 ${username} users - -"
+    ];
+  };
 }
