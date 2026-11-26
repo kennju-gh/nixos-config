@@ -1,4 +1,7 @@
-{ username, ... }:
+{
+  username,
+  ...
+}:
 {
   imports = [
     ./hardware.nix
@@ -13,19 +16,123 @@
 
     home-manager.users.${username} = {
 
+      # Backup
+      my.home.rsync.enable = false; # disabled
+
+      # Browser
+      my.home.firefox.enable = true;
+
+      # CLI
+      my.home.btop.enable = true;
+      my.home.diskwatch.enable = true;
+      my.home.fastfetch.enable = true;
+      my.home.neovim.enable = false; # disabled
+      my.home.nvtop.enable = true;
+      my.home.yazi.enable = false; # disabled
+
+      # Desktop
+      my.home.fuzzel.enable = true;
+      my.home.gtk.enable = true;
+      my.home.hypridle = {
+        enable = true;
+        lock.enable = false; # disabled
+        timeouts = {
+          lock = 180;
+          monitorOff = 200;
+          suspend = 420;
+        };
+      };
+      my.home.hyprlock.enable = true;
+      my.home.mako.enable = true;
+      my.home.nautilus-dconf.enable = true;
+      my.home.niri = {
+        enable = true;
+        profile = "console";
+      };
+      my.home.qt.enable = true;
+      my.home.swaybg.enable = true;
+      my.home.tomat.enable = false; # disabled
+      my.home.waybar = {
+        enable = true;
+        # output = "???";
+        # hwmon = {
+        #   cpu = "???";
+        #   gpu = "???";
+        # };
+      };
+      my.home.wl-clip-persist.enable = true;
+      my.home.wlogout.enable = true;
+
+      # Device
+      my.home.ios.enable = false; # disabled
+
+      # DevOps
+      my.home.vscode.enable = false; # disabled
+
+      # Document
+      my.home.libreoffice-qt.enable = false; # disabled
+      my.home.obsidian.enable = false; # disabled
+      my.home.qalculate-gtk.enable = false; # disabled
+      my.home.zathura.enable = false; # disabled
+
+      # Gaming
+      my.home.obs.enable = false; # disabled
+
+      # Guitar
+      my.home.carla.enable = false; # disabled
+      my.home.reaper.enable = false; # disabled
+      my.home.yabridge.enable = false; # disabled
+
+      # Media
+      my.home.coppwr.enable = false; # disabled
+      my.home.foliate.enable = false; # disabled
+
+      # Security
+      my.home.gpg.enable = true;
+
+      # Shell
+
+      # System
+      my.home.xdg-dir.enable = true;
+      my.home.xdg-mime = {
+        enable = true;
+        book = false; # disabled
+        browser = true;
+        dev = false; # disabled
+        file-manager = true;
+        media = true;
+        office = false; # disabled
+        pdf = false; # disabled
+        wine = true;
+      };
+      my.home.xwayland-satellite.enable = true;
+
+      # Windows
+      my.home.wine-prefix.enable = true;
     };
 
     # == System modules (NixOS)
     # -- Enable system-level features here:
 
+    # App
+    my.system.virt-manager.enable = false; # disabled
+    my.system.wine.enable = true;
+
     # Hardware
-    my.system.logind.enable = false;
+    my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;
       minQuantum = 256;
       maxQuantum = 2048;
     };
-    my.system.pipewire-jack.enable = false;
-    my.system.wireplumber-disable-hdmi-dp.enable = false;
+    my.system.pipewire-jack.enable = false; # disabled
+    my.system.wireplumber-disable-hdmi-dp.enable = false; # disabled
+
+    # Network
+    my.system.tailscale.enable = false; # disabled
+
+    # Service
+    my.system.sunshine.enable = false; # disabled
+    my.system.sunshine-stream.enable = false; # disabled
   };
 }

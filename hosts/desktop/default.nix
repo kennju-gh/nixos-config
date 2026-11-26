@@ -1,4 +1,7 @@
-{ username, ... }:
+{
+  username,
+  ...
+}:
 {
   imports = [
     ./hardware.nix
@@ -32,7 +35,7 @@
       my.home.gtk.enable = true;
       my.home.hypridle = {
         enable = true;
-        lock.enable = false;
+        lock.enable = false; # temporarily disabled
         timeouts = {
           lock = 180;
           monitorOff = 200;
@@ -129,7 +132,7 @@
     boot.kernelModules = [ "coretemp" ];
 
     # Hardware
-    my.system.logind.enable = false;
+    my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;
       minQuantum = 256;
