@@ -184,6 +184,12 @@
         "coretemp"
       ];
     };
+    my.system.locale = {
+      enable = true;
+      timeZone = "Europe/Moscow";
+      defaultLocale = "en_US.UTF-8";
+      keyMap = "us";
+    };
 
     # Hardware
     my.system.logind.enable = false; # disabled
