@@ -126,6 +126,7 @@
       my.home.starship.enable = true;
       my.home.tmux.enable = true;
       my.home.zoxide.enable = true;
+      my.home.zsh.enable = true;
 
       # System
       my.home.xdg-dir.enable = true;
