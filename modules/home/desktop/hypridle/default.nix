@@ -12,7 +12,7 @@ in
   options.my.home.hypridle = {
     enable = lib.mkEnableOption "hypridle";
 
-    lock.enable = lib.mkOption {
+    lockScreen = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Whether to enable screen locking";
@@ -45,15 +45,15 @@ in
 
       settings = {
         general = {
-          lock_cmd = lib.mkIf cfg.lock.enable "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
-          before_sleep_cmd = lib.mkIf cfg.lock.enable "loginctl lock-session";
+          lock_cmd = lib.mkIf cfg.lockScreen "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+          before_sleep_cmd = lib.mkIf cfg.lockScreen "loginctl lock-session";
           after_sleep_cmd = "niri msg action power-on-monitors";
           ignore_dbus_inhibit = false;
           inhibit_sleep = 3;
         };
 
         listener = [
-          (lib.mkIf cfg.lock.enable {
+          (lib.mkIf cfg.lockScreen {
             timeout = cfg.timeouts.lock;
             on-timeout = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
           })

@@ -1,5 +1,6 @@
 {
   username,
+  pkgs,
   ...
 }:
 {
@@ -167,11 +168,11 @@
       enable = true;
       packages = pkgs.linuxPackages_latest;
       params = [
-        # amdgpu params are kept commented for debugging reference.
+        # amdgpu params are kept commented for debugging reference
         # "amdgpu.dcdebugmask=0x410"
         # "amdgpu.no_vpe_idle_pg=1"
         # "amdgpu.runpm=0"
-        "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot.
+        "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot
         "video=HDMI-A-1:2560x1440@120"
         "video=DP-2:1920x1080@60"
       ];
