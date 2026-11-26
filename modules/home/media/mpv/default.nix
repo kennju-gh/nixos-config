@@ -22,7 +22,7 @@ in
 
       config = {
         hwdec = "vaapi";
-        vo = "gpu";
+        vo = "gpu-next";
         gpu-context = "waylandvk";
         gpu-api = "vulkan";
         loop-file = "inf";
