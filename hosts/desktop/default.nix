@@ -48,8 +48,16 @@
       };
       my.home.qt.enable = true;
       my.home.swaybg.enable = true;
-      # my.home.tomat.enable = true;
-      # my.home.waybar.enable = true;
+      my.home.tomat.enable = true;
+      my.home.waybar = {
+        enable = true;
+        output = "HDMI-A-1";
+        hwmon = {
+          cpu = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input";
+          gpu = "/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon/hwmon2/temp1_input";
+        };
+      };
+
       # my.home.wl-clip-persist.enable = true;
       # my.home.wlogout.enable = true;
 
