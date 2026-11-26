@@ -21,7 +21,7 @@
     ./desktop/hypridle
     ./desktop/hyprlock
     ./desktop/mako
-    ./desktop/nautilus
+    ./desktop/nautilus-dconf
     ./desktop/niri
     ./desktop/qt
     ./desktop/swaybg
