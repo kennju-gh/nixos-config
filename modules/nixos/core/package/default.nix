@@ -1,66 +1,77 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.system.package;
+in
 {
-  environment.systemPackages = [
-    # Archives & File systems
-    pkgs.trash-cli
-    pkgs.gnutar
-    pkgs.gzip
-    pkgs.unzip
+  options.my.system.package = {
+    enable = lib.mkEnableOption "package";
+  };
 
-    # Audio & Media managment
-    pkgs.playerctl
-    pkgs.wiremix
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      # Archives & File systems
+      pkgs.trash-cli
+      pkgs.gnutar
+      pkgs.gzip
+      pkgs.unzip
 
-    # Core system & Base utilities
-    pkgs.coreutils
-    pkgs.man-pages
-    pkgs.procps
-    pkgs.killall
-    pkgs.file
-    pkgs.pv
+      # Audio & Media managment
+      pkgs.playerctl
+      pkgs.wiremix
 
-    # CLI
-    pkgs.ripgrep
-    pkgs.dust
-    pkgs.bat
-    pkgs.eza
-    pkgs.fd
+      # Core system & Base utilities
+      pkgs.coreutils
+      pkgs.man-pages
+      pkgs.procps
+      pkgs.killall
+      pkgs.file
+      pkgs.pv
 
-    # Cryptography, Secrets
-    pkgs.gnupg
+      # CLI
+      pkgs.ripgrep
+      pkgs.dust
+      pkgs.bat
+      pkgs.eza
+      pkgs.fd
 
-    # Grafics & Notifications
-    pkgs.libnotify
+      # Cryptography, Secrets
+      pkgs.gnupg
 
-    # Hadrware, Diagnostics & Monitoring
-    pkgs.smartmontools
-    pkgs.dmidecode
-    pkgs.lm_sensors
-    pkgs.powertop
-    pkgs.pciutils
-    pkgs.usbutils
-    pkgs.nvme-cli
-    pkgs.ddcutil
-    pkgs.nftables
-    pkgs.e2fsprogs
-    pkgs.tldr
-    pkgs.ncdu
-    pkgs.lsof
-    pkgs.strace
+      # Grafics & Notifications
+      pkgs.libnotify
 
-    # Networking
-    pkgs.wireguard-tools
-    pkgs.dnsutils
-    pkgs.openssh
-    pkgs.socat
-    pkgs.wget
-    pkgs.curl
+      # Hadrware, Diagnostics & Monitoring
+      pkgs.smartmontools
+      pkgs.dmidecode
+      pkgs.lm_sensors
+      pkgs.powertop
+      pkgs.pciutils
+      pkgs.usbutils
+      pkgs.nvme-cli
+      pkgs.ddcutil
+      pkgs.nftables
+      pkgs.e2fsprogs
+      pkgs.tldr
+      pkgs.ncdu
+      pkgs.lsof
+      pkgs.strace
 
-    # Thumbnails
-    pkgs.ffmpegthumbnailer
-    pkgs.ffmpeg-headless
-  ];
+      # Networking
+      pkgs.wireguard-tools
+      pkgs.dnsutils
+      pkgs.openssh
+      pkgs.socat
+      pkgs.wget
+      pkgs.curl
+
+      # Thumbnails
+      pkgs.ffmpegthumbnailer
+      pkgs.ffmpeg-headless
+    ];
+  };
 }

@@ -181,6 +181,7 @@
       # stateVersion = "26.05"; # set to current NixOS release at initial install
     };
     my.system.oomd.enable = true;
+    my.system.package.enable = true;
 
     # Hardware
     my.system.logind.enable = true;
