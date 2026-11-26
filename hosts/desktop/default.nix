@@ -151,6 +151,7 @@
     # -- Enable system-level features here:
 
     # App
+    my.system.docker.enable = true;
     my.system.virt-manager.enable = true;
     my.system.wine.enable = true;
 
@@ -187,8 +188,12 @@
     # Network
     my.system.tailscale.enable = true;
 
+    # Security
+    my.system.sops.enable = true;
+
     # Service
     my.system.sunshine.enable = true;
     my.system.sunshine-stream.enable = true;
+    my.system.tg-ws-proxy.enable = true;
   };
 }
