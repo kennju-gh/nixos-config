@@ -1,9 +1,20 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.home.mosh;
+in
 {
-  home.packages = [
-    pkgs.mosh
-  ];
+  options.my.home.mosh = {
+    enable = lib.mkEnableOption "mosh";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.mosh
+    ];
+  };
 }
