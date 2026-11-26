@@ -122,6 +122,8 @@
       # Shell
       my.home.direnv.enable = true;
       my.home.fzf.enable = true;
+      my.home.kitty.enable = true;
+      my.home.starship.enable = true;
 
       # System
       my.home.xdg-dir.enable = true;
