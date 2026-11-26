@@ -64,16 +64,12 @@ in
             "mpris"
           ];
           modules-center = [ "clock" ];
-          modules-right = [
+          modules-right = lib.flatten [
             "tray"
-          ]
-          ++ lib.optional hasTomat "custom/tomat"
-          ++ [
+            (lib.optional hasTomat "custom/tomat")
             "niri/language"
-          ]
-          ++ lib.optional hasCpuTemp "temperature#cpu"
-          ++ lib.optional hasGpuTemp "temperature#gpu"
-          ++ [
+            (lib.optional hasCpuTemp "temperature#cpu")
+            (lib.optional hasGpuTemp "temperature#gpu")
             "wireplumber#source"
             "wireplumber#sink"
             "custom/vpn"
@@ -104,9 +100,9 @@ in
             "format" = "{player_icon} {dynamic}";
             "format-paused" = "{status_icon} {dynamic}";
             "player-icons" = {
-              "default" = "  ";
+              "default" = "󰀘";
               "mpd" = "";
-              "firefox" = "  ";
+              "firefox" = "󰈹";
               "mpv" = "";
             };
             "status-icons" = {
