@@ -107,6 +107,7 @@
       my.home.foliate.enable = true;
       my.home.imv.enable = true;
       my.home.kid3-qt.enable = true;
+      my.home.mpd.enable = true;
 
       # Security
       my.home.gpg.enable = true;
