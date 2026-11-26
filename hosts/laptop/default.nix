@@ -120,6 +120,13 @@
       my.home.keepassxc.enable = true;
 
       # Shell
+      my.home.direnv.enable = true;
+      my.home.fzf.enable = true;
+      my.home.kitty.enable = true;
+      my.home.starship.enable = true;
+      my.home.tmux.enable = true;
+      my.home.zoxide.enable = true;
+      my.home.zsh.enable = true;
 
       # System
       my.home.xdg-dir.enable = true;
