@@ -1,16 +1,40 @@
-{ lib, hostName, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
+  cfg = config.my.home.niri;
+
   hostConfig =
     {
       desktop = ./configs/desktop.kdl;
       laptop = ./configs/laptop.kdl;
+      console = ./configs/console.kdl;
     }
-    .${hostName} or null;
+    .${cfg.profile} or null;
 in
 {
-  xdg.configFile."niri/config.kdl".source = ./configs/config.kdl;
+  options.my.home.niri = {
+    enable = lib.mkEnableOption "niri";
 
-  xdg.configFile."niri/host.kdl" = lib.mkIf (hostConfig != null) {
-    source = hostConfig;
+    profile = lib.mkOption {
+      type = lib.types.nullOr (
+        lib.types.enum [
+          "desktop"
+          "laptop"
+          "console"
+        ]
+      );
+      default = null;
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    xdg.configFile."niri/config.kdl".source = ./configs/config.kdl;
+
+    xdg.configFile."niri/host.kdl" = lib.mkIf (hostConfig != null) {
+      source = hostConfig;
+    };
   };
 }

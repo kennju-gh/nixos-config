@@ -42,7 +42,10 @@
       my.home.hyprlock.enable = true;
       my.home.mako.enable = true;
       my.home.nautilus-dconf.enable = true;
-      # my.home.niri.enable = true;
+      my.home.niri = {
+        enable = true;
+        profile = "desktop";
+      };
       # my.home.qt.enable = true;
       # my.home.swaybg.enable = true;
       # my.home.tomat.enable = true;
