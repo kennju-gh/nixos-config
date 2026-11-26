@@ -35,7 +35,7 @@
       my.home.gtk.enable = true;
       my.home.hypridle = {
         enable = true;
-        lock.enable = false; # disabled
+        lockScreen = false; # disabled
         timeouts = {
           lock = 180;
           monitorOff = 200;
@@ -157,6 +157,10 @@
     my.system.steam.enable = true;
     my.system.virt-manager.enable = false; # disabled
     my.system.wine.enable = true;
+
+    #Core
+    my.system.boot.enable = true;
+    my.system.kernel.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled

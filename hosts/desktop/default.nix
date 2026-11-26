@@ -35,7 +35,7 @@
       my.home.gtk.enable = true;
       my.home.hypridle = {
         enable = true;
-        lock.enable = false; # temporarily disabled
+        lockScreen = false; # temporarily disabled
         timeouts = {
           lock = 180;
           monitorOff = 200;
@@ -159,17 +159,29 @@
     my.system.wine.enable = true;
 
     # Core
-    boot.kernelParams = [
-      # amdgpu params are kept commented for debugging reference.
-      # "amdgpu.dcdebugmask=0x410"
-      # "amdgpu.no_vpe_idle_pg=1"
-      # "amdgpu.runpm=0"
-      "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot.
-      "video=HDMI-A-1:2560x1440@120"
-      "video=DP-2:1920x1080@60"
-    ];
-    boot.initrd.kernelModules = [ "amdgpu" ];
-    boot.kernelModules = [ "coretemp" ];
+    my.system.boot = {
+      enable = true;
+      configurationLimit = 3;
+    };
+    my.system.kernel = {
+      enable = true;
+      packages = pkgs.linuxPackages_latest;
+      params = [
+        # amdgpu params are kept commented for debugging reference.
+        # "amdgpu.dcdebugmask=0x410"
+        # "amdgpu.no_vpe_idle_pg=1"
+        # "amdgpu.runpm=0"
+        "amdgpu.gpu_recovery=1" # reset GPU after a hang instead of requiring reboot.
+        "video=HDMI-A-1:2560x1440@120"
+        "video=DP-2:1920x1080@60"
+      ];
+      initrdModules = [ "amdgpu" ];
+      modules = [
+        "msr"
+        "ntsync"
+        "coretemp"
+      ];
+    };
 
     # Hardware
     my.system.logind.enable = false; # disabled
