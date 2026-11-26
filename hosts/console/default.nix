@@ -190,6 +190,7 @@
     my.system.codec.enable = true;
     my.system.environment.enable = true;
     my.system.fonts.enable = true;
+    my.system.getty.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled

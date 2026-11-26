@@ -204,6 +204,10 @@
     my.system.codec.enable = true;
     my.system.environment.enable = true;
     my.system.fonts.enable = true;
+    my.system.getty = {
+      enable = true;
+      session = "niri.desktop";
+    };
 
     # Hardware
     my.system.logind.enable = false; # disabled
