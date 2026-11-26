@@ -77,7 +77,7 @@
       my.home.kubernetes.enable = true;
       my.home.lazydocker.enable = true;
       my.home.lazygit.enable = true;
-      # my.home.lint.enable = true;
+      my.home.lint.enable = true;
       # my.home.mosh.enable = true;
       # my.home.python.enable = true;
       # my.home.terraform.enable = true;
