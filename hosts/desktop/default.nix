@@ -58,7 +58,7 @@
         };
       };
       my.home.wl-clip-persist.enable = true;
-      # my.home.wlogout.enable = true;
+      my.home.wlogout.enable = true;
 
       # Device
       my.home.ios.enable = true;
