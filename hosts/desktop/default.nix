@@ -194,6 +194,7 @@
       enable = true;
       stateVersion = "26.05";
     };
+    my.system.oomd.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled
