@@ -75,7 +75,7 @@
       my.home.json-yaml.enable = true;
       my.home.just.enable = true;
       my.home.kubernetes.enable = true;
-      # my.home.lazydocker.enable = true;
+      my.home.lazydocker.enable = true;
       # my.home.lazygit.enable = true;
       # my.home.lint.enable = true;
       # my.home.mosh.enable = true;
