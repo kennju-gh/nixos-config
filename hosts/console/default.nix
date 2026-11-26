@@ -186,6 +186,9 @@
     my.system.tmpfiles.enable = true;
     my.system.zsh.enable = true;
 
+    # Desktop
+    my.system.codec.enable = true;
+
     # Hardware
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
@@ -199,8 +202,12 @@
     # Network
     my.system.tailscale.enable = false; # disabled
 
+    # Security
+    my.system.sops.enable = false; # disabled
+
     # Service
     my.system.sunshine.enable = false; # disabled
     my.system.sunshine-stream.enable = false; # disabled
+    my.system.tg-ws-proxy.enable = false; # disabled
   };
 }

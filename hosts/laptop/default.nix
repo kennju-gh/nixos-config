@@ -153,7 +153,7 @@
     # -- Enable system-level features here:
 
     # App
-    my.system.docker.enable = true;
+    my.system.docker.enable = false; # disabled
     my.system.nautilus.enable = true;
     my.system.steam.enable = true;
     my.system.virt-manager.enable = false; # disabled
@@ -186,6 +186,9 @@
     my.system.tmpfiles.enable = true;
     my.system.zsh.enable = true;
 
+    # Desktop
+    my.system.codec.enable = true;
+
     # Hardware
     my.system.logind.enable = true;
     my.system.pipewire = {
@@ -199,8 +202,12 @@
     # Network
     my.system.tailscale.enable = false; # disabled
 
+    # Security
+    my.system.sops.enable = false; # disabled
+
     # Service
     my.system.sunshine.enable = false; # disabled
     my.system.sunshine-stream.enable = false; # disabled
+    my.system.tg-ws-proxy.enable = false; # disabled
   };
 }

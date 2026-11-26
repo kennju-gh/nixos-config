@@ -200,6 +200,9 @@
     my.system.tmpfiles.enable = true;
     my.system.zsh.enable = true;
 
+    # Desktop
+    my.system.codec.enable = true;
+
     # Hardware
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
