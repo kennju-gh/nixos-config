@@ -117,6 +117,7 @@
 
       # Security
       my.home.gpg.enable = true;
+      my.home.keepassxc.enable = true;
 
       # Shell
 
