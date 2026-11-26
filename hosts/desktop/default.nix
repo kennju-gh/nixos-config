@@ -164,6 +164,7 @@
       enable = true;
       configurationLimit = 3;
     };
+    my.system.chattr-nocow.enable = true;
     my.system.kernel = {
       enable = true;
       packages = pkgs.linuxPackages_latest;

@@ -1,5 +1,6 @@
 {
   username,
+  pkgs,
   ...
 }:
 {
@@ -160,7 +161,15 @@
 
     #Core
     my.system.boot.enable = true;
-    my.system.kernel.enable = true;
+    my.system.chattr-nocow.enable = true;
+    my.system.kernel = {
+      enable = true;
+      packages = pkgs.linuxPackages_latest;
+      modules = [
+        "msr"
+        "ntsync"
+      ];
+    };
 
     # Hardware
     my.system.logind.enable = true;
