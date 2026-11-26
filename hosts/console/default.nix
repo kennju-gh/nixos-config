@@ -67,6 +67,21 @@
       my.home.ios.enable = false; # disabled
 
       # DevOps
+      my.home.ansible.enable = false; # disabled
+      my.home.gh.enable = false; # disabled
+      my.home.git.enable = true;
+      my.home.glab.enable = false; # disabled
+      my.home.go.enable = false; # disabled
+      my.home.json-yaml.enable = false; # disabled
+      my.home.just.enable = false; # disabled
+      my.home.kubernetes.enable = false; # disabled
+      my.home.lazydocker.enable = false; # disabled
+      my.home.lazygit.enable = false; # disabled
+      my.home.lint.enable = false; # disabled
+      my.home.mosh.enable = false; # disabled
+      my.home.python.enable = false; # disabled
+      my.home.terraform.enable = false; # disabled
+      my.home.trivy.enable = false; # disabled
       my.home.vscode.enable = false; # disabled
 
       # Document
@@ -76,7 +91,7 @@
       my.home.zathura.enable = false; # disabled
 
       # Gaming
-      my.home.obs.enable = false; # disabled
+      my.home.obs-studio.enable = false; # disabled
 
       # Guitar
       my.home.carla.enable = false; # disabled

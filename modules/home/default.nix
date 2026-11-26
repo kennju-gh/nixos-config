@@ -59,8 +59,8 @@
 
     # Gaming
     ./gaming/mangohud
-    ./gaming/mesa
-    ./gaming/obs
+    ./gaming/mesa-demos
+    ./gaming/obs-studio
     ./gaming/pince
     ./gaming/qbittorrent
 

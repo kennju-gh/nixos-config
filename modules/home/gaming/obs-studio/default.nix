@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.my.home.obs;
+  cfg = config.my.home.obs-studio;
 in
 {
-  options.my.home.obs = {
-    enable = lib.mkEnableOption "OBS Studio";
+  options.my.home.obs-studio = {
+    enable = lib.mkEnableOption "obs-studio";
   };
 
   config = lib.mkIf cfg.enable {

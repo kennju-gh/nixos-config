@@ -91,7 +91,8 @@
       my.home.zathura.enable = true;
 
       # Gaming
-      my.home.obs.enable = true;
+      my.home.mangohud.enable = true;
+      my.home.obs-studio.enable = true;
 
       # Guitar
       my.home.carla.enable = true;
