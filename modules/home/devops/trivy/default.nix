@@ -1,9 +1,20 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.home.trivy;
+in
 {
-  home.packages = [
-    pkgs.trivy
-  ];
+  options.my.home.trivy = {
+    enable = lib.mkEnableOption "trivy";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.trivy
+    ];
+  };
 }
