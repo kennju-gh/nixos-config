@@ -124,6 +124,7 @@
       my.home.fzf.enable = true;
       my.home.kitty.enable = true;
       my.home.starship.enable = true;
+      my.home.tmux.enable = true;
 
       # System
       my.home.xdg-dir.enable = true;
