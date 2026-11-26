@@ -191,6 +191,7 @@
     my.system.environment.enable = true;
     my.system.fonts.enable = true;
     my.system.getty.enable = true;
+    my.system.niri.enable = true;
 
     # Hardware
     my.system.logind.enable = false; # disabled

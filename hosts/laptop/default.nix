@@ -194,6 +194,7 @@
       enable = true;
       session = "niri.desktop";
     };
+    my.system.niri.enable = true;
 
     # Hardware
     my.system.logind.enable = true;
