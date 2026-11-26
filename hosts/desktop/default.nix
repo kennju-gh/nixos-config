@@ -69,7 +69,7 @@
       # DevOps
       my.home.ansible.enable = true;
       my.home.gh.enable = true;
-      # my.home.git.enable = true;
+      my.home.git.enable = true;
       # my.home.glab.enable = true;
       # my.home.go.enable = true;
       # my.home.json-yaml.enable = true;
