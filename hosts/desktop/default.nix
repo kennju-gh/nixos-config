@@ -105,6 +105,7 @@
       # Media
       my.home.coppwr.enable = true;
       my.home.foliate.enable = true;
+      my.home.imv.enable = true;
 
       # Security
       my.home.gpg.enable = true;
