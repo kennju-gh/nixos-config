@@ -1,9 +1,20 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.home.gh;
+in
 {
-  home.packages = [
-    pkgs.gh
-  ];
+  options.my.home.gh = {
+    enable = lib.mkEnableOption "gh";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.gh
+    ];
+  };
 }
