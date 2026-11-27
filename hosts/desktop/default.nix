@@ -244,6 +244,11 @@
     };
 
     # Network
+    my.system.fail2ban.enable = true;
+    my.system.openssh = {
+      enable = true;
+      port = 62419;
+    };
     my.system.tailscale.enable = true;
 
     # Security

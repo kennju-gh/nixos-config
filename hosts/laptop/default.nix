@@ -224,6 +224,11 @@
     my.system.wireplumber-disable-hdmi-dp.enable = false; # disabled
 
     # Network
+    my.system.fail2ban.enable = true;
+    my.system.openssh = {
+      enable = true;
+      port = 62419;
+    };
     my.system.tailscale.enable = false; # disabled
 
     # Security

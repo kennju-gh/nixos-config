@@ -42,7 +42,7 @@
     # Network
     ./network/fail2ban
     ./network/network
-    ./network/ssh
+    ./network/openssh
     ./network/tailscale
     ./network/zapret
 
