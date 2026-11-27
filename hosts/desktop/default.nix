@@ -163,7 +163,7 @@
     my.system.boot = {
       enable = true;
       configurationLimit = 3;
-      plymouth = true;
+      plymouth = false;
     };
     my.system.chattr-nocow.enable = true;
     my.system.kernel = {
