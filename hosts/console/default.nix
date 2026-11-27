@@ -1,5 +1,6 @@
 {
   username,
+  inputs,
   pkgs,
   ...
 }:
@@ -8,9 +9,29 @@
     ./hardware.nix
     ../common/filesystems.nix
     ../../modules/disko/btrfs-layout.nix
+    inputs.jovian.nixosModules.default
   ];
 
   config = {
+
+    # == SteamOS mode
+    # -- Enable Jovian features here:
+
+    # Jovian
+    jovian = {
+      hardware.has.amd.gpu = true;
+      steam = {
+        enable = true;
+        autoStart = true;
+        user = username;
+        desktopSession = "niri";
+      };
+      steamos = {
+        enableZram = false; # using zswap + swapfile from my.system.swap
+        enableEarlyOOM = false; # using systemd-oomd from my.system.oomd
+      };
+      decky-loader.enable = true;
+    };
 
     # == User modules (Home Manager)
     # -- Enable user-level features here:
