@@ -1,7 +1,7 @@
 {
+  username,
   config,
   lib,
-  username,
   ...
 }:
 let
@@ -9,7 +9,7 @@ let
 in
 {
   options.my.system.tailscale = {
-    enable = lib.mkEnableOption "Tailscale VPN";
+    enable = lib.mkEnableOption "tailscale";
   };
 
   config = lib.mkIf cfg.enable {

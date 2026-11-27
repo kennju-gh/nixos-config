@@ -1,4 +1,7 @@
-{ username, ... }:
+{
+  username,
+  ...
+}:
 {
   # Data
   fileSystems."/mnt/DATA" = {

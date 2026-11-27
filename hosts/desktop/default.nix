@@ -255,6 +255,7 @@
       passwordAuthentication = false;
     };
     my.system.tailscale.enable = true;
+    my.system.zapret.enable = true;
 
     # Security
     my.system.sops.enable = true;

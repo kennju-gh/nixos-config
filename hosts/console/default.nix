@@ -231,6 +231,7 @@
       passwordAuthentication = false;
     };
     my.system.tailscale.enable = false; # disabled
+    my.system.zapret.enable = false; # disabled
 
     # Security
     my.system.sops.enable = false; # disabled
