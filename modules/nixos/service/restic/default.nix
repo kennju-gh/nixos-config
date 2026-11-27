@@ -19,7 +19,10 @@ in
     ];
 
     systemd.services.create-restic-dir = {
-      unitConfig.RequiresMountsFor = [ "/mnt/DATA" ];
+      unitConfig = {
+        RequiresMountsFor = [ "/mnt/DATA" ];
+        ConditionPathIsMountPoint = "/mnt/DATA";
+      };
       after = [ "mnt-DATA.mount" ];
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
@@ -32,6 +35,18 @@ in
         chown root:root /mnt/DATA/Backup/IDDQD /mnt/DATA/Backup/IDKFA
         chmod 0700 /mnt/DATA/Backup/IDDQD /mnt/DATA/Backup/IDKFA
       '';
+    };
+
+    systemd.services.restic-backups-obsidian = {
+      unitConfig.ConditionPathIsMountPoint = "/mnt/DATA";
+      after = [ "create-restic-dir.service" ];
+      wants = [ "create-restic-dir.service" ];
+    };
+
+    systemd.services.restic-backups-keepass = {
+      unitConfig.ConditionPathIsMountPoint = "/mnt/DATA";
+      after = [ "create-restic-dir.service" ];
+      wants = [ "create-restic-dir.service" ];
     };
 
     services.restic.backups = {
