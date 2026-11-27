@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -22,18 +21,6 @@ in
       default = false;
       description = "Enable Plymouth boot splash screen";
     };
-
-    plymouthTheme = lib.mkOption {
-      type = lib.types.str;
-      default = "nixos-bgrt";
-      description = "Plymouth theme name";
-    };
-
-    plymouthThemePackages = lib.mkOption {
-      type = lib.types.listOf lib.types.package;
-      default = [ pkgs.nixos-bgrt-plymouth ];
-      description = "Plymouth theme packages to install";
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -50,8 +37,6 @@ in
 
       plymouth = lib.mkIf cfg.plymouth {
         enable = true;
-        theme = cfg.plymouthTheme;
-        themePackages = cfg.plymouthThemePackages;
       };
 
       kernelParams = lib.mkIf cfg.plymouth [

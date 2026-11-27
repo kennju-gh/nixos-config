@@ -164,7 +164,6 @@
       enable = true;
       configurationLimit = 3;
       plymouth = true;
-      plymouthTheme = "nixos-bgrt";
     };
     my.system.chattr-nocow.enable = true;
     my.system.kernel = {
