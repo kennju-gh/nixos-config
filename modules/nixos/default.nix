@@ -53,7 +53,6 @@
     # Service
     ./service/polkit-gnome
     ./service/restic
-    ./service/restic-dir
     ./service/sunshine
     ./service/sunshine-stream
     ./service/tg-ws-proxy
