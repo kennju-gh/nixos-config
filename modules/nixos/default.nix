@@ -51,7 +51,7 @@
     ./security/sops
 
     # Service
-    ./service/polkit-agent
+    ./service/polkit-gnome
     ./service/restic
     ./service/restic-dir
     ./service/sunshine

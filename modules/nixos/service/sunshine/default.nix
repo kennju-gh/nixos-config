@@ -8,7 +8,7 @@ let
 in
 {
   options.my.system.sunshine = {
-    enable = lib.mkEnableOption "Sunshine game streaming host";
+    enable = lib.mkEnableOption "sunshine";
   };
 
   config = lib.mkIf cfg.enable {
