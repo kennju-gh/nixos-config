@@ -1,23 +1,45 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.system.gpu;
+in
 {
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  options.my.system.gpu = {
+    enable = lib.mkEnableOption "gpu";
+
+    overdrive = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable AMD GPU overdrive and LACT daemon";
+    };
   };
 
-  hardware.enableRedistributableFirmware = true;
-  hardware.amdgpu.overdrive.enable = true;
+  config = lib.mkIf cfg.enable {
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
-  environment.systemPackages = [
-    pkgs.lact
-  ];
+    hardware.enableRedistributableFirmware = true;
 
-  systemd.packages = [
-    pkgs.lact
-  ];
+    hardware.amdgpu.overdrive.enable = lib.mkIf cfg.overdrive true;
 
-  systemd.services.lactd.wantedBy = [ "multi-user.target" ];
+    environment.systemPackages = lib.mkIf cfg.overdrive [
+      pkgs.lact
+    ];
+
+    systemd = lib.mkIf cfg.overdrive {
+      packages = [
+        pkgs.lact
+      ];
+
+      services.lactd = {
+        wantedBy = [ "multi-user.target" ];
+      };
+    };
+  };
 }

@@ -168,6 +168,7 @@
       modules = [
         "msr"
         "ntsync"
+        "k10temp"
       ];
     };
     my.system.locale = {
@@ -203,6 +204,10 @@
     my.system.cpu = {
       enable = true;
       vendor = "amd";
+    };
+    my.system.gpu = {
+      enable = true;
+      overdrive = true;
     };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {

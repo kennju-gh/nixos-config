@@ -222,6 +222,10 @@
       enable = true;
       vendor = "intel";
     };
+    my.system.gpu = {
+      enable = true;
+      overdrive = true;
+    };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;
