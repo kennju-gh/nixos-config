@@ -214,6 +214,10 @@
     my.system.uwsm.enable = true;
 
     # Hardware
+    my.system.bluetooth = {
+      enable = true;
+      fastConnectable = false; # temporarily disabled
+    };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;

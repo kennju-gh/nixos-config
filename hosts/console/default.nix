@@ -196,6 +196,10 @@
     my.system.uwsm.enable = false; # disabled
 
     # Hardware
+    my.system.bluetooth = {
+      enable = true;
+      fastConnectable = true;
+    };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;
