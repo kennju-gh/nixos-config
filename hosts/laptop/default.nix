@@ -191,7 +191,8 @@
     my.system.environment.enable = true;
     my.system.fonts.enable = true;
     my.system.getty = {
-      enable = false; # temporarily disabled
+      enable = true;
+      autologin = false; # disabled
       session = "niri.desktop";
     };
     my.system.niri.enable = true;

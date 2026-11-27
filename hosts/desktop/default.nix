@@ -206,6 +206,7 @@
     my.system.fonts.enable = true;
     my.system.getty = {
       enable = true;
+      autologin = true;
       session = "niri.desktop";
     };
     my.system.niri.enable = true;
