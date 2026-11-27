@@ -225,6 +225,10 @@
 
     # Network
     my.system.fail2ban.enable = true;
+    my.system.network = {
+      enable = true;
+      hostName = "nixos";
+    };
     my.system.openssh = {
       enable = true;
       port = 62419;
