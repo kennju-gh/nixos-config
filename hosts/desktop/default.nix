@@ -18,7 +18,7 @@
     home-manager.users.${username} = {
 
       # Backup
-      my.home.rsync.enable = true;
+      my.home.rsync.enable = false; # temporarily disabled
 
       # Browser
       my.home.firefox.enable = true;

@@ -18,7 +18,7 @@
     home-manager.users.${username} = {
 
       # Backup
-      my.home.rsync.enable = true;
+      my.home.rsync.enable = false; # temporarily disabled
 
       # Browser
       my.home.firefox.enable = true;
@@ -160,11 +160,15 @@
     my.system.wine.enable = false; # disabled
 
     #Core
-    my.system.boot.enable = true;
+    my.system.boot = {
+      enable = true;
+      configurationLimit = 3;
+    };
     my.system.chattr-nocow.enable = true;
     my.system.kernel = {
       enable = true;
       packages = pkgs.linuxPackages_latest;
+      initrdModules = [ "amdgpu" ];
       modules = [
         "msr"
         "ntsync"

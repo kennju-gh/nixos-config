@@ -36,7 +36,7 @@
       my.home.gtk.enable = true;
       my.home.hypridle = {
         enable = true;
-        lockScreen = false; # disabled
+        lockScreen = true;
         timeouts = {
           lock = 180;
           monitorOff = 200;
@@ -160,11 +160,15 @@
     my.system.wine.enable = true;
 
     #Core
-    my.system.boot.enable = true;
+    my.system.boot = {
+      enable = true;
+      configurationLimit = 3;
+    };
     my.system.chattr-nocow.enable = true;
     my.system.kernel = {
       enable = true;
       packages = pkgs.linuxPackages_latest;
+      initrdModules = [ "amdgpu" ];
       modules = [
         "msr"
         "ntsync"
