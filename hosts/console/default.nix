@@ -200,6 +200,10 @@
       enable = true;
       fastConnectable = true;
     };
+    my.system.cpu = {
+      enable = true;
+      vendor = "amd";
+    };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;

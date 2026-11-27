@@ -218,6 +218,10 @@
       enable = true;
       fastConnectable = false; # temporarily disabled
     };
+    my.system.cpu = {
+      enable = true;
+      vendor = "intel";
+    };
     my.system.logind.enable = false; # disabled
     my.system.pipewire = {
       enable = true;
