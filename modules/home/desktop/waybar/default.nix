@@ -224,7 +224,7 @@ in
         #custom-power {
           margin-left: 6px;
           margin-right: 12px;
-          font-size: 24px;
+          font-size: 28px;
         }
 
         .modules-left #workspaces button,
