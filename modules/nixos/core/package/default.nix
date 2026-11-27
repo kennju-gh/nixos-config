@@ -62,7 +62,6 @@ in
       pkgs.strace
 
       # Networking
-      pkgs.wireguard-tools
       pkgs.dnsutils
       pkgs.openssh
       pkgs.socat
