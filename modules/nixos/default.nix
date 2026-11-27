@@ -47,7 +47,7 @@
     ./network/zapret
 
     # Security
-    ./security/hyprlock-pam
+    ./security/hyprlock
     ./security/sops
 
     # Service

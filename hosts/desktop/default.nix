@@ -258,6 +258,7 @@
     my.system.zapret.enable = true;
 
     # Security
+    my.system.hyprlock.enable = true;
     my.system.sops.enable = true;
 
     # Service
