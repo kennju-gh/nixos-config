@@ -266,5 +266,22 @@
     my.system.sunshine.enable = true;
     my.system.sunshine-stream.enable = true;
     my.system.tg-ws-proxy.enable = true;
+
+    # User
+    my.system.user = {
+      enable = true;
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "docker"
+        "libvirtd"
+        "kvm"
+        "i2c"
+        "audio"
+        "realtime"
+        "video"
+      ];
+      stateVersion = "26.05";
+    };
   };
 }

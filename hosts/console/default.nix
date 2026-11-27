@@ -242,5 +242,19 @@
     my.system.sunshine.enable = false; # disabled
     my.system.sunshine-stream.enable = false; # disabled
     my.system.tg-ws-proxy.enable = false; # disabled
+
+    # User
+    my.system.user = {
+      enable = true;
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "i2c"
+        "audio"
+        "realtime"
+        "video"
+      ];
+      # stateVersion = "26.05"; # set to current release at initial install
+    };
   };
 }
