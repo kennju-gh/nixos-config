@@ -190,9 +190,10 @@
     my.system.codec.enable = true;
     my.system.environment.enable = true;
     my.system.fonts.enable = true;
-    my.system.getty.enable = true;
+    my.system.getty.enable = false; # disabled
     my.system.niri.enable = true;
     my.system.stylix.enable = true;
+    my.system.uwsm.enable = false; # disabled
 
     # Hardware
     my.system.logind.enable = false; # disabled

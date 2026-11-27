@@ -196,6 +196,7 @@
     };
     my.system.niri.enable = true;
     my.system.stylix.enable = true;
+    my.system.uwsm.enable = true;
 
     # Hardware
     my.system.logind.enable = true;
