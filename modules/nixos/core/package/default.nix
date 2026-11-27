@@ -16,6 +16,7 @@ in
     environment.systemPackages = [
       # Archives & File systems
       pkgs.trash-cli
+      pkgs.glib
       pkgs.gnutar
       pkgs.gzip
       pkgs.unzip
