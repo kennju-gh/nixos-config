@@ -237,6 +237,7 @@
       quantum = 256;
       rate = 48000;
     };
+    my.system.power.enable = false; # temporarily disabled
     my.system.wireplumber-disable-hdmi-dp = {
       enable = true;
       devices = [ "alsa_card.pci-0000_03_00.1" ]; # (wpctl status)

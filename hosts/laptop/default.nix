@@ -220,6 +220,7 @@
       maxQuantum = 2048;
     };
     my.system.pipewire-jack.enable = false; # disabled
+    my.system.power.enable = true;
     my.system.wireplumber-disable-hdmi-dp.enable = false; # disabled
 
     # Network
