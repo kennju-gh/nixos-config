@@ -55,7 +55,7 @@ in
         mainBar = {
           layer = "top";
           position = "top";
-          height = 35;
+          height = 34;
           spacing = 2;
 
           modules-left = [
@@ -223,8 +223,8 @@ in
 
         #custom-power {
           margin-left: 6px;
-          margin-right: 5px;
-          font-size: 25px;
+          margin-right: 12px;
+          font-size: 24px;
         }
 
         .modules-left #workspaces button,
