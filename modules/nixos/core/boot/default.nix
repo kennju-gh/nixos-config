@@ -47,7 +47,6 @@ in
       };
 
       consoleLogLevel = lib.mkIf cfg.plymouth 3;
-      initrd.systemd.enable = lib.mkIf cfg.plymouth true;
 
       plymouth = lib.mkIf cfg.plymouth {
         enable = true;
