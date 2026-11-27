@@ -27,7 +27,7 @@ in
     hardware.cpu.intel.updateMicrocode = lib.mkIf (cfg.vendor == "intel") true;
     hardware.cpu.amd.updateMicrocode = lib.mkIf (cfg.vendor == "amd") true;
 
-    services.udev.extraRules = lib.mkIf (cfg.vendor == "intel") ''
+    services.udev.extraRules = ''
       SUBSYSTEM=="powercap", ACTION=="add|change", KERNEL=="intel-rapl:*", RUN+="${pkgs.coreutils}/bin/chgrp wheel /sys/%p/energy_uj", RUN+="${pkgs.coreutils}/bin/chmod g+r /sys/%p/energy_uj"
     '';
   };
