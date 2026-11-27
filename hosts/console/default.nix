@@ -180,10 +180,12 @@
     my.system.virt-manager.enable = false; # disabled
     my.system.wine.enable = true;
 
-    #Core
+    # Core
     my.system.boot = {
       enable = true;
       configurationLimit = 3;
+      plymouth = false; # disabled
+      plymouthTheme = "nixos-bgrt";
     };
     my.system.chattr-nocow.enable = true;
     my.system.kernel = {
