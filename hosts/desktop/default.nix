@@ -252,6 +252,7 @@
     my.system.openssh = {
       enable = true;
       port = 62419;
+      passwordAuthentication = false;
     };
     my.system.tailscale.enable = true;
 

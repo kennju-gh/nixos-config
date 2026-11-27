@@ -15,6 +15,12 @@ in
       default = 62419;
       description = "SSH listening port";
     };
+
+    passwordAuthentication = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Allow SSH authentication using passwords";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -24,8 +30,8 @@ in
       openFirewall = true;
 
       settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
+        PasswordAuthentication = cfg.passwordAuthentication;
+        KbdInteractiveAuthentication = cfg.passwordAuthentication;
         PermitRootLogin = "no";
         MaxAuthTries = 3;
       };
