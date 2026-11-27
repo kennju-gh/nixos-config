@@ -239,6 +239,7 @@
 
     # Service
     my.system.polkit-gnome.enable = true;
+    my.system.restic.enable = false; # disabled
     my.system.sunshine.enable = false; # disabled
     my.system.sunshine-stream.enable = false; # disabled
     my.system.tg-ws-proxy.enable = false; # disabled

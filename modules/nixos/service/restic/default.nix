@@ -1,53 +1,64 @@
 {
   username,
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  cfg = config.my.system.restic;
+in
 {
-  environment.systemPackages = [
-    pkgs.restic
-  ];
+  options.my.system.restic = {
+    enable = lib.mkEnableOption "restic";
+  };
 
-  services.restic.backups = {
-    obsidian = {
-      initialize = true;
-      repository = "/mnt/DATA/Backup/IDDQD";
-      passwordFile = "/home/${username}/.config/restic/password";
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.restic
+    ];
 
-      paths = [
-        "/home/${username}/Documents/IDDQD"
-      ];
+    services.restic.backups = {
+      obsidian = {
+        initialize = true;
+        repository = "/mnt/DATA/Backup/IDDQD";
+        passwordFile = "/home/${username}/.config/restic/password";
 
-      exclude = [
-        "/home/${username}/Documents/IDDQD/.git"
-        "/home/${username}/Documents/IDDQD/.gitignore"
-        "/home/${username}/Documents/IDDQD/.trash"
-      ];
+        paths = [
+          "/home/${username}/Documents/IDDQD"
+        ];
 
-      checkOpts = [ "--read-data-subset=20%" ];
+        exclude = [
+          "/home/${username}/Documents/IDDQD/.git"
+          "/home/${username}/Documents/IDDQD/.gitignore"
+          "/home/${username}/Documents/IDDQD/.trash"
+        ];
 
-      timerConfig = {
-        OnCalendar = "Sun *-*-* 12:00:00";
-        Persistent = true;
-        RandomizedDelaySec = "5m";
+        checkOpts = [ "--read-data-subset=20%" ];
+
+        timerConfig = {
+          OnCalendar = "Sun *-*-* 12:00:00";
+          Persistent = true;
+          RandomizedDelaySec = "5m";
+        };
       };
-    };
 
-    keepass = {
-      initialize = true;
-      repository = "/mnt/DATA/Backup/IDKFA";
-      passwordFile = "/home/${username}/.config/restic/password";
+      keepass = {
+        initialize = true;
+        repository = "/mnt/DATA/Backup/IDKFA";
+        passwordFile = "/home/${username}/.config/restic/password";
 
-      paths = [
-        "/home/${username}/Documents/IDKFA"
-      ];
+        paths = [
+          "/home/${username}/Documents/IDKFA"
+        ];
 
-      checkOpts = [ "--read-data" ];
+        checkOpts = [ "--read-data" ];
 
-      timerConfig = {
-        OnCalendar = "*-*-1,15 12:00:00";
-        Persistent = true;
-        RandomizedDelaySec = "5m";
+        timerConfig = {
+          OnCalendar = "*-*-1,15 12:00:00";
+          Persistent = true;
+          RandomizedDelaySec = "5m";
+        };
       };
     };
   };
